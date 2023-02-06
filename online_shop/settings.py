@@ -26,7 +26,7 @@ SECRET_KEY = passwords.SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", ]
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # Мои приложения
     'shop.apps.ShopConfig',
+    # "users.apps.UsersConfig"
 ]
 
 MIDDLEWARE = [
@@ -63,8 +64,7 @@ ROOT_URLCONF = 'online_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +135,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "shop/static"), ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_ROOT = os.path.join(BASE_DIR, "/media/")
 
 INTERNAL_IPS = ["127.0.0.1", ]
 
+# AUTH_USER_MODEL = 'users.CustomUser'

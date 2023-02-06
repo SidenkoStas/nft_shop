@@ -1,0 +1,42 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+
+{% block title %} 404 Error {% endblock title %}
+
+{% block content %}
+    <div class="not__found">
+        <div class="container">
+            <div class="row justify-content-center align-items-center pt-100">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <img class="img-fluid"
+                         src='{% static "shop/img/bg/left-Skull.png" %}'
+                         alt="">
+                </div>
+                <div class="col-lg-6">
+                    <div class="space-y-30 content">
+                        <div class="space-y-20 d-flex flex-column
+			                        justify-content-center align-items-center">
+                            <img src='{% static "shop/img/bg/404.png" %}'
+                                 alt="">
+                            <h2 class="text-center">УПС 🥺! Страница не
+                                найдена</h2>
+                            <p class="text-center">Может её кто-то украл!
+                                Вернитесь на главную страницу.
+                            </p>
+                            <div><a href='{% url "shop:index" %}'
+                                    class="btn btn-grad">Вернуться на
+                                главную</a></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <img class="img-fluid"
+                         src='{% static "shop/img/bg/right-Skull.png" %}'
+                         alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
