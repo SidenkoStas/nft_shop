@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # Мои приложения
     'shop.apps.ShopConfig',
-    # "users.apps.UsersConfig"
+    "users.apps.UsersConfig"
 ]
 
 MIDDLEWARE = [
@@ -139,4 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "/media/")
 
 INTERNAL_IPS = ["127.0.0.1", ]
 
-# AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'users.CustomUser'
+
+LOGIN_REDIRECT_URL = "shop:index"
+LOGOUT_REDIRECT_URL = "shop:index"

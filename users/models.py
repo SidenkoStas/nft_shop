@@ -1,8 +1,10 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 
 
 class Notification(models.Model):
+    """Модель уведомлений, меняется только админом."""
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
     notification = models.CharField(max_length=150, verbose_name="Уведомления")
@@ -16,13 +18,18 @@ class Notification(models.Model):
 
 
 class CustomUser(AbstractUser):
+    """Своя модель пользователей."""
     photo = models.ImageField(upload_to="profile_photos/%Y/%m/%d/", blank=True,
                               verbose_name="Фото профиля")
-    bio = models.TextField(verbose_name="Биография")
-    vk_links = models.CharField(max_length=150,
-                                verbose_name="Ссылка на ВКонтакте")
+    bio = models.TextField(blank=True, verbose_name="Биография")
     notifications = models.ManyToManyField(Notification, blank=True,
                                            verbose_name="Уведомления")
+
+    def get_notifications(self):
+        return "\n".join([p.notifications for p in self.notifications.all()])
+
+    def get_absolute_url(self):
+        return reverse("user")
 
     class Meta:
         verbose_name = "Пользователь"

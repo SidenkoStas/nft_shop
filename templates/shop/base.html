@@ -26,8 +26,6 @@
     />
     <link rel="stylesheet" href='{% static "shop/css/style.css" %}'/>
 </head>
-<body class="body">
-
 <div class="overflow-hidden">
     <!-- =========Темы=========  -->
     <div class="position-fixed w-full" style="z-index: 999999;">
@@ -277,7 +275,7 @@
                                     </button>
                                 </div>
                                 <a class="btn btn-grad btn-sm"
-                                   href='{% static "Connect-wallet.html" %}'>CПрисоединить кошелёк</a>
+                                   href='{% static "Connect-wallet.html" %}'>Присоединить кошелёк</a>
                             </div>
                         </div>
                     </div>
@@ -286,8 +284,13 @@
         </header>
     </div>
 </div>
+
 {% block content %}
 {% endblock content %}
+<body class="body">
+
+
+
 <!-- Footer -->
 <footer class="footer__1">
     <div class="container">
@@ -317,40 +320,25 @@
                 </div>
             </div>
             <div class="col-lg-2 col-6">
-                <h6 class="footer__title">Oknedis</h6>
+                <h6 class="footer__title">Навигация по страницам</h6>
                 <ul class="footer__list">
-                    <li><a href='{% static "Marketplace.html" %}'> Магазин
-                    </a>
+                    <li><a href='{% static "Marketplace.html" %}'> Магазин </a>
+                    </li>
+                    <li><a href='{% static "Collections.html" %}'>Коллекции</a>
+                    </li>
+                    <li><a href='{% static "Collections.html" %}'>Художники</a>
                     </li>
                 </ul>
             </div>
             <div class="col-lg-2 col-6">
-                <h6 class="footer__title">Assets</h6>
-                <ul class="footer__list">
-                    <li><a href='{% static "Profile.html" %}'> Profile </a>
+                <h6 class="footer__title"></h6>
+                <ul class="footer__list" style="margin-top: 47px">
+                    <li><a href='{% static "Profile.html" %}'> Профиль </a>
                     </li>
-                    <li><a href='{% static "Creators.html" %}'> Creators </a>
+                    <li><a href='{% static "Upload.html" %}'> Загрузить </a>
                     </li>
-                    <li><a href='{% static "Collections.html" %}'>
-                        Colletctions </a>
-                    </li>
-                    <li><a href='{% static "Activity.html" %}'> Activity
-                    </a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-6">
-                <h6 class="footer__title">Company</h6>
-                <ul class="footer__list">
-                    <li><a href='{% static "Upload-type.html" %}'> Upload
-                        Types </a>
-                    </li>
-                    <li><a href='{% static "Upload.html" %}'> Upload </a></li>
-                    <li><a href='{% static "Connect-wallet.html" %}'> Connect
-                        wallet
-                    </a></li>
-                    <li><a href='{% static "Item-details.html" %}'> Item
-                        details </a>
-                    </li>
+                    <li><a href='{% static "Connect-wallet.html" %}'>
+                        Присоединить кошелёк </a></li>
                 </ul>
             </div>
         </div>
@@ -381,8 +369,7 @@
 <script src='{% static "shop/js/sticky-sidebar.js" %}'></script>
 <script src='{% static "shop/js/script.js" %}'></script>
 <script src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js'></script>
-{#<script src='https://unpkg.com/moralis/dist/moralis.js'></script>#}
-{#<script src='{% static "shop/js/nft.js" %}'></script>#}
+
 <script
         src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></script>
 </body>
