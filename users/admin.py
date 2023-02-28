@@ -13,7 +13,8 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ("username", "email", "bio", "get_html_photo", "get_notifications")
+    list_display = ("username", "email", "bio", "get_html_photo",
+                    "get_notifications")
     search_fields = ("username", "email")
 
     def get_html_photo(self, obj):

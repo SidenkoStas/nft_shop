@@ -1,0 +1,111 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %} Регистрация {% endblock title %}
+
+{% block content %}
+
+    <div class="edit_profile register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-9">
+                    <div class="right_part space-y-20">
+                        <h1 class="color_white"> Регистрация аккаунта</h1>
+                        <p class="color_white" style="color: white !important"
+                        >Вы можете установить предпочтительное отображаемое имя
+                            и управлять другими личными настройками.</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="box edit_box w-full space-y-20">
+                                <div class="row">
+                                    <div class="col-lg-6 account-info">
+                                        <div class="avatars space-x-20 mb-30">
+                                            <div id="profile-container">
+                                                <img id="profileImage"
+                                                     src='{% static "shop/img/avatars/avatar_3.png"%}'
+                                                     alt="Avatar"
+                                                     class="avatar avatar-lg border-0">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">Фото</h6>
+                                                <p class="mb-1"> Рекомендованный размер фото 400x400 🙌 </p>
+                                                <div id="boxUpload">
+                                                    <a href='{% static "#"%}' class="btn btn-sm btn-dark">
+                                                        {{ form.photo }} Upload </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="mb-20"> 🍉 Инфо аккаунта </h3>
+                                        <div class="form-group space-y-10 mb-0">
+                                            <div class="space-y-20">
+                                                <div class="space-y-10">
+                                                    <span class="nameInput">Отображаемый Логин</span>
+                                                    {{ form.username }}
+                                                </div>
+
+                                                <div class="space-y-10">
+														<span class="nameInput d-flex justify-content-between">
+                                                            Email
+                                                            <span class="txt_xs color_text">
+                                                                Укажите свой действующий Email.</span>
+														</span>
+                                                    <div class="confirm">
+                                                        {{ form.email }}
+                                                    </div>
+                                                </div>
+                                                <div class="space-y-10">
+                                                    <span class="nameInput">О себе</span>
+                                                    {{ form.bio }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 social-media">
+                                        <h3 class="mb-20 mt-40">📮 Уведомления </h3>
+                                        <ul class="space-y-10">
+                                            <li class="d-flex space-x-10 switch_item">
+                                                <input type="checkbox" id="switch1" checked="" /><label
+                                                    for="switch1"
+                                            >Toggle</label
+                                            >
+                                                <span class="color_text"> Email Уведомления </span>
+                                            </li>
+{#                                            <li class="d-flex space-x-10 switch_item">#}
+{#                                                <input type="checkbox" id="switch2" checked="" /><label#}
+{#                                                    for="switch2"#}
+{#                                            >Toggle</label#}
+{#                                            >#}
+{#                                                <span class="color_text"> New Bids </span>#}
+{#                                            </li>#}
+                                            <li class="d-flex space-x-10 switch_item">
+                                                <input type="checkbox" id="switch3" checked="" /><label
+                                                    for="switch3"
+                                            >Toggle</label
+                                            >
+                                                <span class="color_text"> Покупка NFT </span>
+                                            </li>
+{#                                            <li class="d-flex space-x-10 switch_item">#}
+{#                                                <input type="checkbox" id="switch4" checked="" /><label#}
+{#                                                    for="switch4"#}
+{#                                            >Toggle</label#}
+{#                                            >#}
+{#                                                <span class="color_text"> People Followed </span>#}
+{#                                            </li>#}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="hr"></div>
+                                <p class="color_black">
+                                    Пожалуйста, потратьте пару менут для того, чтобы прочитать
+                                    Общие условия предоставления услуг. Для продолжения, вам необходимо
+                                    принять условия соглашения.</p>
+                                <a href='{% static "#"%}' class="btn btn-grad">Регистрация</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

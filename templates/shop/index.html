@@ -14,7 +14,7 @@
                         <h1 class="hero__title">
                             Откройте для себя цифровое искусство и собирайте NFT
                         </h1>
-                        <p class="hero__text txt">Откройте для себя мир NFT. Приобретайте арты или выкладывайте свои.</p>
+                        <p class="hero__text txt">Откройте для себя мир NFT. Приобретайте или выкладывайте свои.</p>
                         <div class="space-x-20 d-flex flex-column flex-md-row
 										sm:space-y-20">
                             <a class="btn btn-primary" href='{% static "Marketplace.html"%}'>Перейти в магазин</a>
@@ -30,1172 +30,1030 @@
             </div>
 
         </div>
-    </div><div class="section__artists mt-100">
-    <div class="container">
-        <div class="space-y-30">
-            <div class="section_head">
-                <h2 class="section__title">Топ художников</h2>
+    </div>
+    <div class="section__artists mt-100">
+        <div class="modal fade popup" id="popup_bid_success" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body space-y-20 p-40">
+                        <h3 class="text-center">Your Bidding
+                            Successfully Added</h3>
+                        <p class="text-center">your bid <span class="color_text txt
+			                        _bold">(16ETH) </span> has been listing
+                            to our database</p>
+
+                        <a href='{% static "Home1.html"%}' class="btn btn-dark w-full"> Watch the listings</a>
+                    </div>
+                </div>
             </div>
-            <div class="section_body swiper_artists">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper position-relative">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="creator_item creator_card rounded_border space-x-10">
+        </div>
+        <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body space-y-20 p-40">
+                        <h3>Place a Bid</h3>
+                        <p>You must bid at least <span class="color_black">15 ETH</span>
+                        </p>
+                        <input type="text" class="form-control"
+                               placeholder="00.00 ETH">
+
+                        <p>Enter quantity. <span class="color_green">5 available</span>
+                        </p>
+                        <input type="text" class="form-control"
+                               value="1">
+                        <div class="hr"></div>
+                        <div class="d-flex justify-content-between">
+                            <p> You must bid at least:</p>
+                            <p class="text-right color_black txt _bold"> 67,000 ETH </p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p> service free:</p>
+                            <p class="text-right color_black txt _bold"> 0,901 ETH </p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p> Total bid amount:</p>
+                            <p class="text-right color_black txt _bold"> 56,031 ETH </p>
+                        </div>
+                        <a href='{% static "Home1.html"%}' class="btn btn-primary w-full"
+                           data-toggle="modal"
+                           data-target="#popup_bid_success"
+                           data-dismiss="modal"
+                           aria-label="Close"> Place a bid</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade popup" id="popup_history" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-body space-y-20 p-40">
+                        <h4> History </h4>
+                        <div class="creator_item creator_card space-x-10">
                             <div class="avatars space-x-10">
                                 <div class="media">
                                     <div class="badge">
-                                        <img src='{% static "shop/img/icons/Badge.svg" %}' alt="" />
+                                        <img src='{% static "shop/img/icons/Badge.svg" %}'
+                                             alt="">
                                     </div>
                                     <a href='{% static "Profile.html"%}'>
                                         <img
                                                 src='{% static "shop/img/avatars/avatar_1.png" %}'
                                                 alt="Avatar"
-                                                class="avatar avatar-md"
-                                        />
+                                                class="avatar avatar-md">
                                     </a>
                                 </div>
                                 <div>
-                                    <a href='{% static "Profile.html"%}'
-                                    ><p class="avatars_name color_black">@xander_hall...</p></a>
-                                    <span class="price color_green">16.58 ETH</span>
+                                    <p class="color_black">Bid accepted <span
+                                            class="color_brand">1
+												ETH</span> by <a class="color_black txt
+												_bold"
+                                                                 href='{% static "Profile.html"%}'>ayoub</a></p>
+                                    <span class="date color_text">28/06/2021, 12:08</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="creator_item creator_card rounded_border space-x-10">
+                        <div class="creator_item creator_card space-x-10">
                             <div class="avatars space-x-10">
                                 <div class="media">
                                     <div class="badge">
-                                        <img src='{% static "shop/img/icons/Badge.svg" %}' alt="" />
+                                        <img src='{% static "shop/img/icons/Badge.svg" %}'
+                                             alt="">
                                     </div>
                                     <a href='{% static "Profile.html"%}'>
                                         <img
                                                 src='{% static "shop/img/avatars/avatar_2.png" %}'
                                                 alt="Avatar"
-                                                class="avatar avatar-md"
-                                        />
+                                                class="avatar avatar-md">
                                     </a>
                                 </div>
                                 <div>
-                                    <a href='{% static "Profile.html"%}'
-                                    ><p class="avatars_name color_black">@hamza_pitts...</p></a
-                                    >
-                                    <span class="price color_green">14.55 ETH</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="creator_item creator_card rounded_border space-x-10">
-                            <div class="avatars space-x-10">
-                                <div class="media">
-                                    <div class="badge">
-                                        <img src='{% static "shop/img/icons/Badge.svg" %}' alt="" />
-                                    </div>
-                                    <a href='{% static "Profile.html"%}'>
-                                        <img
-                                                src='{% static "shop/img/avatars/avatar_3.png" %}'
-                                                alt="Avatar"
-                                                class="avatar avatar-md"
-                                        />
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='{% static "Profile.html"%}'
-                                    ><p class="avatars_name color_black">@nathan_walls...</p></a
-                                    >
-                                    <span class="price color_green">24.13 ETH</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="creator_item creator_card rounded_border space-x-10">
-                            <div class="avatars space-x-10">
-                                <div class="media">
-                                    <div class="badge">
-                                        <img src='{% static "shop/img/icons/Badge.svg" %}' alt="" />
-                                    </div>
-                                    <a href='{% static "Profile.html"%}'>
-                                        <img
-                                                src='{% static "shop/img/avatars/avatar_4.png" %}'
-                                                alt="Avatar"
-                                                class="avatar avatar-md"
-                                        />
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='{% static "Profile.html"%}'
-                                    ><p class="avatars_name color_black">@kelton_collier...</p></a
-                                    >
-                                    <span class="price color_green">62.68 ETH</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="creator_item creator_card rounded_border space-x-10">
-                            <div class="avatars space-x-10">
-                                <div class="media">
-                                    <div class="badge">
-                                        <img src='{% static "shop/img/icons/Badge.svg" %}' alt="" />
-                                    </div>
-                                    <a href='{% static "Profile.html"%}'>
-                                        <img
-                                                src='{% static "shop/img/avatars/avatar_5.png" %}'
-                                                alt="Avatar"
-                                                class="avatar avatar-md"
-                                        />
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='{% static "Profile.html"%}'
-                                    ><p class="avatars_name color_black">@cade_glover...</p></a
-                                    >
-                                    <span class="price color_green">32.48 ETH</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade popup" id="popup_bid_success" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body space-y-20 p-40">
-                    <h3 class="text-center">Your Bidding
-                        Successfuly Added</h3>
-                    <p class="text-center">your bid <span class="color_text txt
-			                        _bold">(16ETH) </span> has been listing
-                        to our database</p>
-
-                    <a href='{% static "Home1.html"%}' class="btn btn-dark w-full"> Watch the listings</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog"
-         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal"
-                        aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body space-y-20 p-40">
-                    <h3>Place a Bid</h3>
-                    <p>You must bid at least <span class="color_black">15 ETH</span>
-                    </p>
-                    <input type="text" class="form-control"
-                           placeholder="00.00 ETH">
-
-                    <p>Enter quantity. <span class="color_green">5 available</span>
-                    </p>
-                    <input type="text" class="form-control"
-                           value="1">
-                    <div class="hr"></div>
-                    <div class="d-flex justify-content-between">
-                        <p> You must bid at least:</p>
-                        <p class="text-right color_black txt _bold"> 67,000 ETH </p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p> service free:</p>
-                        <p class="text-right color_black txt _bold"> 0,901 ETH </p>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <p> Total bid amount:</p>
-                        <p class="text-right color_black txt _bold"> 56,031 ETH </p>
-                    </div>
-                    <a href='{% static "Home1.html"%}' class="btn btn-primary w-full"
-                       data-toggle="modal"
-                       data-target="#popup_bid_success"
-                       data-dismiss="modal"
-                       aria-label="Close"> Place a bid</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade popup" id="popup_history" tabindex="-1" role="dialog"
-               aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-body space-y-20 p-40">
-                <h4> History </h4>
-                <div class="creator_item creator_card space-x-10">
-                    <div class="avatars space-x-10">
-                        <div class="media">
-                            <div class="badge">
-                                <img src='{% static "shop/img/icons/Badge.svg" %}'
-                                     alt="">
-                            </div>
-                            <a href='{% static "Profile.html"%}'>
-                                <img
-                                        src='{% static "shop/img/avatars/avatar_1.png" %}'
-                                        alt="Avatar"
-                                        class="avatar avatar-md">
-                            </a>
-                        </div>
-                        <div>
-                            <p class="color_black">Bid accepted <span
-                                    class="color_brand">1
-												ETH</span> by <a class="color_black txt
-												_bold"
-                                                                 href='{% static "Profile.html"%}'>ayoub</a></p>
-                            <span class="date color_text">28/06/2021, 12:08</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="creator_item creator_card space-x-10">
-                    <div class="avatars space-x-10">
-                        <div class="media">
-                            <div class="badge">
-                                <img src='{% static "shop/img/icons/Badge.svg" %}'
-                                     alt="">
-                            </div>
-                            <a href='{% static "Profile.html"%}'>
-                                <img
-                                        src='{% static "shop/img/avatars/avatar_2.png" %}'
-                                        alt="Avatar"
-                                        class="avatar avatar-md">
-                            </a>
-                        </div>
-                        <div>
-                            <p class="color_black">Bid accepted <span
-                                    class="color_brand">3
+                                    <p class="color_black">Bid accepted <span
+                                            class="color_brand">3
 												ETH</span> by <a class="color_black txt
 												_bold"
                                                                  href='{% static "Profile.html"%}'>monir</a></p>
-                            <span class="date color_text">22/05/2021, 12:08</span>
+                                    <span class="date color_text">22/05/2021, 12:08</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div><div class="mt-100">
-    <div class="container">
-        <div class="section__head">
-            <div class="d-md-flex
+        </div><div class="mt-100">
+        <div class="container">
+            <div class="section__head">
+                <div class="d-md-flex
 							sm:space-y-20
 							space-x-20
 							justify-content-between
 							align-items-center">
-                <h2 class="section__title text-center">Исследуй</h2>
-                <ul class="menu_categories space-x-20">
-                    <li>
-                        <a href='{% static "Home1.html#"%}' class="color_brand">
-                            <span> Все </span>
+                    <h2 class="section__title text-center">Исследуй</h2>
+                    <ul class="menu_categories space-x-20">
+                        <li>
+                            <a href='{% static "Home1.html#"%}' class="color_brand">
+                                <span> Все </span>
+                            </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-gamepad-line"></i> <span> Игры </span>
                         </a>
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-gamepad-line"></i> <span> Игры </span>
-                    </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-brush-line"></i> <span> Искусство </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-brush-line"></i> <span> Искусство </span>
+                        </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-stock-line"></i> <span> Торговые карточки </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-stock-line"></i> <span> Торговые карточки </span>
+                        </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-music-line"></i> <span> Музыка </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-music-line"></i> <span> Музыка </span>
+                        </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-global-line"></i> <span> Доменные имена </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-global-line"></i> <span> Доменные имена </span>
+                        </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-emotion-laugh-line"></i> <span> Мемы </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-emotion-laugh-line"></i> <span> Мемы </span>
+                        </a>
 
-                    </li>
-                    <li> <a href='{% static "Home1.html#"%}'>
-                        <i class="ri-layout-4-line"></i> <span> Коллекционные </span>
-                    </a>
+                        </li>
+                        <li> <a href='{% static "Home1.html#"%}'>
+                            <i class="ri-layout-4-line"></i> <span> Коллекционные </span>
+                        </a>
 
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
 
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_1.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mickel_fenn</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_2.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@danil_pannini</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
                                     <img
-                                            src='{% static "shop/img/avatars/avatar_1.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
+                                            src='{% static "shop/img/items/item_1.png" %}'
+                                            alt="item
+												img" />
                                 </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mickel_fenn</p>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">1.2k</span>
                                 </a>
                             </div>
-                            <div class="avatars space-x-3">
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Colorful Abstract Painting
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">4 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">2.45
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_3.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mazanov_sky</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_4.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mucky_fennouni</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_2.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">13.2k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    The girl with the firefly
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">12 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">2.55
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_5.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@jimmy_dom</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_6.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@kristian_sefroui</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_3.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">1.2k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Dodo hide the seek
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">6 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">2.45
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_1.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@Alvin_nov</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_7.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mucky_holiman</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_4.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">4.1k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Liquid Forest Princess
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">34 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">0.55
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_8.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@stivan_rominok</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_9.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@danil_pan</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_5.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">6.4k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Spider Eyes Modern Art
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">7 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">1.45
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_10.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mazanov_sky</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_11.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mucky_art</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_6.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">13.2k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Synthwave Painting
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">2 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">0.055
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_12.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@jimmy_dom</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_5.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@kristian_fel</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_7.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">1.6k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Contemporary Abstract
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">34 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">0.95
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="card__item four">
+                        <div class="card_body space-y-10">
+                            <!-- =============== -->
+                            <div class="creators space-x-10">
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_13.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@Alvin_nov</p>
+                                    </a>
+                                </div>
+                                <div class="avatars space-x-3">
+                                    <a href='{% static "Profile.html"%}'>
+                                        <img
+                                                src='{% static "shop/img/avatars/avatar_14.png" %}'
+                                                alt="Avatar"
+                                                class="avatar avatar-sm" />
+                                    </a>
+                                    <a href='{% static "Profile.html"%}'>
+                                        <p class="avatars_name txt_xs">@mucky_art</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card_head">
+                                <a href='{% static "Item-details.html"%}'>
+                                    <img
+                                            src='{% static "shop/img/items/item_8.png" %}'
+                                            alt="item
+												img" />
+                                </a>
+                                <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                    <i class="ri-heart-3-fill"></i>
+                                    <span class="txt_sm">11.5k</span>
+                                </a>
+                            </div>
+                            <!-- =============== -->
+
+                            <h6 class="card_title">
+                                <a class="color_black"
+                                   href='{% static "Item-details.html"%}'>
+                                    Valkyrie Abstract Art
+                                </a>
+                            </h6>
+                            <div class="card_footer d-block space-y-10">
+                                <div class="card_footer justify-content-between">
+                                    <div class="creators">
+                                        <p class="txt_sm">9 in stock</p>
+                                    </div>
+                                    <a href='{% static "Home1.html#"%}' class="">
+                                        <p class="txt_sm">
+                                            Price: <span class="color_green txt_sm">3.55
+														ETH</span>
+                                        </p>
+                                    </a>
+                                </div>
+                                <div class="hr"></div>
+                                <div class="d-flex
+											align-items-center
+											space-x-10
+											justify-content-between">
+                                    <div class="d-flex align-items-center
+												space-x-5">
+                                        <i class="ri-history-line"></i>
+                                        <a href='{% static "Home1.html#"%}' data-toggle="modal"
+                                           data-target="#popup_history">
+                                            <p class="color_text txt_sm
+														view_history" style="width:
+														auto">
+                                                View History
+                                            </p>
+                                        </a>
+                                    </div>
+                                    <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
+                                       data-toggle="modal"
+                                       data-target="#popup_bid">Place Bid</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href='{% static "Marketplace.html"%}' class="btn btn-sm btn-white">
+                    <i class="ri-restart-line"></i>
+                    Посмотреть всё
+                </a>
+            </div>
+        </div>
+    </div><div class="section mt-100">
+        <div class="container">
+            <div class="section__head">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="section__title"> Коллекции </h2>
+                    <a href='{% static "Collections.html"%}' class="btn btn-dark btn-sm">
+                        Посмотреть всё </a>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mb-30_reset">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="collections space-y-10 mb-30">
+                        <a href='http://raroin.creabik.com/collections.html'>
+                            <div class="collections_item">
+                                <div class="images-box space-y-10">
+                                    <div class="top_imgs">
+                                        <img src='{% static "shop/img/items/item_9.png" %}' alt="">
+                                        <img src='{% static "shop/img/items/item_10.png" %}' alt="">
+                                        <img src='{% static "shop/img/items/item_11.png" %}' alt="">
+                                    </div>
+                                    <img src='{% static "shop/img/items/item_12.png" %}' alt="">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="collections_footer justify-content-between">
+                            <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Creative Art collection</a></h5>
+                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                <i class="ri-heart-3-fill"></i>
+                                <span class="txt_md">2.1k</span>
+                            </a>
+                        </div>
+                        <div class="creators space-x-10">
+                            <span class="color_text txt_md"> 5 items · Created by</span>
+                            <div class="avatars space-x-5">
                                 <a href='{% static "Profile.html"%}'>
                                     <img
                                             src='{% static "shop/img/avatars/avatar_2.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@danil_pannini</p>
+                                            alt="Avatar" class="avatar avatar-sm">
                                 </a>
                             </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_1.png" %}'
-                                        alt="item
-												img" />
+                            <a href='{% static "Profile.html"%}'>
+                                <p class="avatars_name txt_sm"> @william_jamy... </p>
                             </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">1.2k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Colorful Abstract Painting
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">4 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">2.45
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="collections space-y-10 mb-30">
+                        <a href='http://raroin.creabik.com/collections.html'>
+                            <div class="collections_item">
+                                <div class="images-box space-y-10">
+                                    <div class="top_imgs">
+                                        <img
+                                                src='{% static "shop/img/items/item_13.png" %}'
+                                                alt="">
+                                        <img
+                                                src='{% static "shop/img/items/item_14.png" %}'
+                                                alt="">
+                                        <img
+                                                src='{% static "shop/img/items/item_15.png" %}'
+                                                alt="">
+                                    </div>
+                                    <img src='{% static "shop/img/items/item_16.png" %}'
+                                         alt="">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="collections_footer justify-content-between">
+                            <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Colorful Abstract Painting</a></h5>
+                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
+                                <i class="ri-heart-3-fill"></i>
+                                <span class="txt_md">3.5k</span>
+                            </a>
+                        </div>
                         <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
+                            <span class="color_text txt_md"> 7 items · Created by</span>
+                            <div class="avatars space-x-5">
                                 <a href='{% static "Profile.html"%}'>
                                     <img
                                             src='{% static "shop/img/avatars/avatar_3.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mazanov_sky</p>
+                                            alt="Avatar" class="avatar avatar-sm">
                                 </a>
                             </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_4.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mucky_fennouni</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_2.png" %}'
-                                        alt="item
-												img" />
+                            <a href='{% static "Profile.html"%}'>
+                                <p class="avatars_name txt_sm"> @alexis_fenn... </p>
                             </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">13.2k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                The girl with the firefly
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">12 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">2.55
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_5.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@jimmy_dom</p>
-                                </a>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="collections space-y-10 mb-30">
+                        <a href='http://raroin.creabik.com/collections.html'>
+                            <div class="collections_item">
+                                <div class="images-box space-y-10">
+                                    <div class="top_imgs">
+                                        <img
+                                                src='{% static "shop/img/items/item_17.png" %}'
+                                                alt="">
+                                        <img
+                                                src='{% static "shop/img/items/item_18.png" %}'
+                                                alt="">
+                                        <img
+                                                src='{% static "shop/img/items/item_19.png" %}'
+                                                alt="">
+                                    </div>
+                                    <img src='{% static "shop/img/items/item_20.png" %}'
+                                         alt="">
+                                </div>
                             </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_6.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@kristian_sefroui</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_3.png" %}'
-                                        alt="item
-												img" />
-                            </a>
+                        </a>
+                        <div class="collections_footer justify-content-between">
+                            <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Modern Art collection</a></h5>
                             <a href='{% static "Home1.html#"%}' class="likes space-x-3">
                                 <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">1.2k</span>
+                                <span class="txt_md">7.2k</span>
                             </a>
                         </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Dodo hide the seek
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">6 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">2.45
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
                         <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
+                            <span class="color_text txt_md"> 2 items · Created by</span>
+                            <div class="avatars space-x-5">
                                 <a href='{% static "Profile.html"%}'>
                                     <img
                                             src='{% static "shop/img/avatars/avatar_1.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@Alvin_nov</p>
+                                            alt="Avatar" class="avatar avatar-sm">
                                 </a>
                             </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_7.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mucky_holiman</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_4.png" %}'
-                                        alt="item
-												img" />
-                            </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">4.1k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Liquid Forest Princess
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">34 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">0.55
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_8.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@stivan_rominok</p>
-                                </a>
-                            </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_9.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@danil_pan</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_5.png" %}'
-                                        alt="item
-												img" />
-                            </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">6.4k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Spider Eyes Modern Art
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">7 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">1.45
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_10.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mazanov_sky</p>
-                                </a>
-                            </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_11.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mucky_art</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_6.png" %}'
-                                        alt="item
-												img" />
-                            </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">13.2k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Synthwave Painting
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">2 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">0.055
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_12.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@jimmy_dom</p>
-                                </a>
-                            </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_5.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@kristian_fel</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_7.png" %}'
-                                        alt="item
-												img" />
-                            </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">1.6k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Contemporary Abstract
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">34 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">0.95
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                <div class="card__item four">
-                    <div class="card_body space-y-10">
-                        <!-- =============== -->
-                        <div class="creators space-x-10">
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_13.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@Alvin_nov</p>
-                                </a>
-                            </div>
-                            <div class="avatars space-x-3">
-                                <a href='{% static "Profile.html"%}'>
-                                    <img
-                                            src='{% static "shop/img/avatars/avatar_14.png" %}'
-                                            alt="Avatar"
-                                            class="avatar avatar-sm" />
-                                </a>
-                                <a href='{% static "Profile.html"%}'>
-                                    <p class="avatars_name txt_xs">@mucky_art</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card_head">
-                            <a href='{% static "Item-details.html"%}'>
-                                <img
-                                        src='{% static "shop/img/items/item_8.png" %}'
-                                        alt="item
-												img" />
-                            </a>
-                            <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                                <i class="ri-heart-3-fill"></i>
-                                <span class="txt_sm">11.5k</span>
-                            </a>
-                        </div>
-                        <!-- =============== -->
-
-                        <h6 class="card_title">
-                            <a class="color_black"
-                               href='{% static "Item-details.html"%}'>
-                                Valkyrie Abstract Art
-                            </a>
-                        </h6>
-                        <div class="card_footer d-block space-y-10">
-                            <div class="card_footer justify-content-between">
-                                <div class="creators">
-                                    <p class="txt_sm">9 in stock</p>
-                                </div>
-                                <a href='{% static "Home1.html#"%}' class="">
-                                    <p class="txt_sm">
-                                        Price: <span class="color_green txt_sm">3.55
-														ETH</span>
-                                    </p>
-                                </a>
-                            </div>
-                            <div class="hr"></div>
-                            <div class="d-flex
-											align-items-center
-											space-x-10
-											justify-content-between">
-                                <div class="d-flex align-items-center
-												space-x-5">
-                                    <i class="ri-history-line"></i>
-                                    <a href='{% static "Home1.html#"%}' data-toggle="modal"
-                                       data-target="#popup_history">
-                                        <p class="color_text txt_sm
-														view_history" style="width:
-														auto">
-                                            View History
-                                        </p>
-                                    </a>
-                                </div>
-                                <a class="btn btn-sm btn-primary" href='{% static "Home1.html#"%}'
-                                   data-toggle="modal"
-                                   data-target="#popup_bid">Place Bid</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center">
-            <a href='{% static "Marketplace.html"%}' class="btn btn-sm btn-white">
-                <i class="ri-restart-line"></i>
-                Посмотреть всё
-            </a>
-        </div>
-    </div>
-</div><div class="section mt-100">
-    <div class="container">
-        <div class="section__head">
-            <div class="d-flex justify-content-between align-items-center">
-                <h2 class="section__title"> Коллекции </h2>
-                <a href='{% static "Collections.html"%}' class="btn btn-dark btn-sm">
-                    Посмотреть всё </a>
-            </div>
-        </div>
-
-        <div class="row justify-content-center mb-30_reset">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="collections space-y-10 mb-30">
-                    <a href='http://raroin.creabik.com/collections.html'>
-                        <div class="collections_item">
-                            <div class="images-box space-y-10">
-                                <div class="top_imgs">
-                                    <img src='{% static "shop/img/items/item_9.png" %}' alt="">
-                                    <img src='{% static "shop/img/items/item_10.png" %}' alt="">
-                                    <img src='{% static "shop/img/items/item_11.png" %}' alt="">
-                                </div>
-                                <img src='{% static "shop/img/items/item_12.png" %}' alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="collections_footer justify-content-between">
-                        <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Creative Art collection</a></h5>
-                        <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                            <i class="ri-heart-3-fill"></i>
-                            <span class="txt_md">2.1k</span>
-                        </a>
-                    </div>
-                    <div class="creators space-x-10">
-                        <span class="color_text txt_md"> 5 items · Created by</span>
-                        <div class="avatars space-x-5">
                             <a href='{% static "Profile.html"%}'>
-                                <img
-                                        src='{% static "shop/img/avatars/avatar_2.png" %}'
-                                        alt="Avatar" class="avatar avatar-sm">
+                                <p class="avatars_name txt_sm"> @Joshua_Bren... </p>
                             </a>
                         </div>
-                        <a href='{% static "Profile.html"%}'>
-                            <p class="avatars_name txt_sm"> @william_jamy... </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="collections space-y-10 mb-30">
-                    <a href='http://raroin.creabik.com/collections.html'>
-                        <div class="collections_item">
-                            <div class="images-box space-y-10">
-                                <div class="top_imgs">
-                                    <img
-                                            src='{% static "shop/img/items/item_13.png" %}'
-                                            alt="">
-                                    <img
-                                            src='{% static "shop/img/items/item_14.png" %}'
-                                            alt="">
-                                    <img
-                                            src='{% static "shop/img/items/item_15.png" %}'
-                                            alt="">
-                                </div>
-                                <img src='{% static "shop/img/items/item_16.png" %}'
-                                     alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="collections_footer justify-content-between">
-                        <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Colorful Abstract Painting</a></h5>
-                        <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                            <i class="ri-heart-3-fill"></i>
-                            <span class="txt_md">3.5k</span>
-                        </a>
-                    </div>
-                    <div class="creators space-x-10">
-                        <span class="color_text txt_md"> 7 items · Created by</span>
-                        <div class="avatars space-x-5">
-                            <a href='{% static "Profile.html"%}'>
-                                <img
-                                        src='{% static "shop/img/avatars/avatar_3.png" %}'
-                                        alt="Avatar" class="avatar avatar-sm">
-                            </a>
-                        </div>
-                        <a href='{% static "Profile.html"%}'>
-                            <p class="avatars_name txt_sm"> @alexis_fenn... </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="collections space-y-10 mb-30">
-                    <a href='http://raroin.creabik.com/collections.html'>
-                        <div class="collections_item">
-                            <div class="images-box space-y-10">
-                                <div class="top_imgs">
-                                    <img
-                                            src='{% static "shop/img/items/item_17.png" %}'
-                                            alt="">
-                                    <img
-                                            src='{% static "shop/img/items/item_18.png" %}'
-                                            alt="">
-                                    <img
-                                            src='{% static "shop/img/items/item_19.png" %}'
-                                            alt="">
-                                </div>
-                                <img src='{% static "shop/img/items/item_20.png" %}'
-                                     alt="">
-                            </div>
-                        </div>
-                    </a>
-                    <div class="collections_footer justify-content-between">
-                        <h5 class="collection_title"><a href='{% static "Collections.html"%}'>Modern Art collection</a></h5>
-                        <a href='{% static "Home1.html#"%}' class="likes space-x-3">
-                            <i class="ri-heart-3-fill"></i>
-                            <span class="txt_md">7.2k</span>
-                        </a>
-                    </div>
-                    <div class="creators space-x-10">
-                        <span class="color_text txt_md"> 2 items · Created by</span>
-                        <div class="avatars space-x-5">
-                            <a href='{% static "Profile.html"%}'>
-                                <img
-                                        src='{% static "shop/img/avatars/avatar_1.png" %}'
-                                        alt="Avatar" class="avatar avatar-sm">
-                            </a>
-                        </div>
-                        <a href='{% static "Profile.html"%}'>
-                            <p class="avatars_name txt_sm"> @Joshua_Bren... </p>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-    <div class="call2action">
-        <div class="container">
-            <div class="row justify-content-between align-items-center
+        <div class="call2action">
+            <div class="container">
+                <div class="row justify-content-between align-items-center
 						sm:space-y-20">
-                <div class="col-md-6">
-                    <div class="space-y-20">
-                        <h1 class="text-white">Начни собственную коллекцию сегодня</h1>
-                        <p class="color_text section__text">Погрузись в мир
-                            коллекционирования или делись собственными
-                            произведениями!</p>
-                        <a href='{% static "Connect-wallet.html"%}' class="btn
+                    <div class="col-md-6">
+                        <div class="space-y-20">
+                            <h1 class="text-white">Начни собственную коллекцию сегодня</h1>
+                            <p class="color_text section__text">Погрузись в мир
+                                коллекционирования или делись собственными
+                                произведениями!</p>
+                            <a href='{% static "Connect-wallet.html"%}' class="btn
 									btn-primary">Начать коллекционирование</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-auto">
-                    <img class="img-fluid img__logo"
-                         src='{% static "shop/img/logos/Logo_illustrstion.png" %}'
-                         alt="...">
+                    <div class="col-md-auto">
+                        <img class="img-fluid img__logo"
+                             src='{% static "shop/img/logos/Logo_illustrstion.png" %}'
+                             alt="...">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock content %}

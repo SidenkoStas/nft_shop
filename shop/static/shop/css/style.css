@@ -10850,7 +10850,8 @@ a:hover {
 }
 
 h1 {
-  font-size: calc( 40px + 15 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 40px + 15 * ((100vw - 576px) / 1024));
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -10874,7 +10875,8 @@ h1 {
 }
 
 h2 {
-  font-size: calc( 32px + 2 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 32px + 2 * ((100vw - 576px) / 1024));
   line-height: 1.15;
   letter-spacing: -0.02em;
 }
@@ -10892,7 +10894,8 @@ h2 {
 }
 
 h3 {
-  font-size: calc( 24px + 2 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 24px + 2 * ((100vw - 576px) / 1024));
   line-height: 1.1;
 }
 
@@ -10909,7 +10912,8 @@ h3 {
 }
 
 h4 {
-  font-size: calc( 19px + 1 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 19px + 1 * ((100vw - 576px) / 1024));
   line-height: 1.35;
 }
 
@@ -10926,7 +10930,8 @@ h4 {
 }
 
 h5 {
-  font-size: calc( 16px + 2 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 16px + 2 * ((100vw - 576px) / 1024));
   line-height: 1.5;
 }
 
@@ -10943,7 +10948,8 @@ h5 {
 }
 
 h6 {
-  font-size: calc( 15.5px + 0.5 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 15.5px + 0.5 * ((100vw - 576px) / 1024));
   line-height: 1.5;
   letter-spacing: 0;
 }
@@ -20365,7 +20371,8 @@ label:active:after {
 .blog .blog-title {
   margin: 0 0 20px;
   color: #183b56;
-  font-size: calc( 19px + 7 * ((100vw - 576px) / 1024));
+  font-size: calc(
+ 19px + 7 * ((100vw - 576px) / 1024));
   line-height: 1.33;
   max-height: 2.66em;
   letter-spacing: 0.2px;
@@ -21506,6 +21513,7 @@ label:active:after {
 .is__dark .share_box,
 .is__dark .more_box,
 .is__dark .notifications_popup,
+.is__dark .avatar_popup,
 .is__dark .more .icon,
 .is__dark .share .icon,
 .is__dark .hero__profile .copy,
@@ -21523,6 +21531,7 @@ label:active:after {
 .is__dark .share_box a,
 .is__dark .more_box a,
 .is__dark .notifications_popup a,
+.is__dark .avatar_popup a,
 .is__dark .more .icon a,
 .is__dark .share .icon a,
 .is__dark .hero__profile .copy a,
@@ -21535,6 +21544,9 @@ label:active:after {
 }
 
 .is__dark .notifications_popup .details {
+  background: transparent !important;
+}
+.is__dark .avatar_popup .details {
   background: transparent !important;
 }
 
