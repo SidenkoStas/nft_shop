@@ -26,9 +26,12 @@
     />
     <link rel="stylesheet" href='{% static "shop/css/style.css" %}'/>
 </head>
-<div class="overflow-hidden">
-    <!-- =========Темы=========  -->
-    <div class="position-fixed w-full" style="z-index: 999999;">
+
+
+<body class="body">
+
+    <!-- =========Темы========= -->
+{#    <div class="position-fixed w-full" style="z-index: 999999;">#}
         <div class="bg-dark py-10">
             <div class="container">
                 <div class="text-center	d-flex justify-content-between space-x-10 align-items-center" style="margin-left: 83.5%">
@@ -44,113 +47,67 @@
                 </div>
             </div>
         </div>
-        <!-- =========Конец тем=========  -->
-        <!-- =========Headers========  -->
-        <header class="header__1 js-header" id="header">
-            <div class="container">
-                <div class="wrapper js-header-wrapper">
-                    <div class="header__logo">
-                        <a href="{% url 'shop:index' %}">
-                            <img class="header__logo" id="logo_js"
-                                 src='{% static "shop/img/logos/Logo.png" %}'
-                                 alt="logo" />
-                        </a>
-                    </div>
-                    <!-- =========Навигация по сайту=========  -->
-                    <div class="header__menu">
-                        <ul class="d-flex space-x-20">
-                            <li>
-                                <a class="color_black" href='#'> Главная
-                                </a>
-                            </li>
-                            <li>
-                                <a class="color_black"
-                                   href='{% static "Marketplace.html" %}'>
-                                    Магазин</a>
-                            </li>
-                            <li>
-                                <a class="color_black"
-                                   href='{% static "Collections.html" %}'>
-                                    Коллекции</a>
-                            </li>
-                            <li>
-                                <a class="color_black"
-                                   href='{% static "Creators.html" %}'>
-                                    Художники</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- ========Поиск========= -->
-                    <div class="header__search">
-                        <input type="text" placeholder="Поиск"/>
-                        <button class="header__result">
-                            <i class="ri-search-line"></i>
-                        </button>
-                    </div>
-                    <div class="header__btns">
-                        <a class="btn btn-grad btn-sm"
-                           href='{% static "Connect-wallet.html" %}'>
-                            <i class="ri-wallet-3-line"></i>
-                            Присоединить кошелёк</a>
-                        <a href='{% static "Home1.html" %}' id="connectbtn">
-                            <img width="45"
-                                 src='{% static "shop/img/icons/metamask.svg" %}'
-                                 alt="">
-                        </a>
-                    </div>
-                    <div class="header__burger js-header-burger"></div>
-
-                    <div class="header__mobile js-header-mobile">
-                        <div class="header__mobile__menu space-y-40">
-                            <ul class="d-flex space-y-20">
-                                <li><a class="color_black"
-                                       href='{% static "Marketplace.html" %}'>
-                                    Магазин</a></li>
-                                <li><a class="color_black"
-                                       href='{% static "Collections.html" %}'>
-                                    Коллекции</a></li>
-                                <li><a class="color_black"
-                                       href='{% static "Creators.html" %}'>
-                                    Художники</a></li>
-
-                            </ul>
-                            <div class="space-y-20">
-                                <div class="header__search in_mobile w-full">
-                                    <input type="text" placeholder="Поиск"/>
-                                    <button class="header__result">
-                                        <i class="ri-search-line"></i>
-                                    </button>
-                                </div>
-                                <a class="btn btn-grad btn-sm"
-                                   href='{% static "Connect-wallet.html" %}'>Присоединить кошелёк</a>
-                            </div>
-                        </div>
-                    </div>
+{#    </div>#}
+     <!-- =========Конец тем=========  -->
+    <!-- =========Headers========  -->
+    <header class="header__1 js-header" id="header">
+        <div class="container">
+            <div class="wrapper js-header-wrapper">
+                <div class="header__logo">
+                    <a href="{% url 'shop:index' %}">
+                        <img class="header__logo" id="logo_js"
+                             src='{% static "shop/img/logos/Logo.png" %}'
+                             alt="logo" />
+                    </a>
                 </div>
-            </div>
-        </header>
-        <!-- ======Header_2==== -->
-        <header class="header__1 js-header header_wallet" id="header_admin">
-            <div class="container">
-                <div class="wrapper js-header-wrapper space-x-10">
-                    <div class="header__logo">
-                        <a href='{% url "shop:index" %}'>
-                            <img
-                                    class="header__logo"
-                                    id="logo_js"
-                                    src='{% static "shop/img/logos/Logo.png" %}'
-                                    alt="logo"
-                            />
-                        </a>
-                    </div>
-                    <!-- ==================  -->
-                    <div class="header__menu">
-                        <ul class="d-flex space-x-20">
-                            <li>
-                                <a class="color_black is_new"
-                                   href='{% static "Home1.html#" %}'>Главная <i
-                                        class="ri-more-2-fill"></i></a>
-                            </li>
+                <!-- =========Навигация по сайту=========  -->
+                <div class="header__menu">
+                    <ul class="d-flex space-x-20">
+                        <li>
+                            <a class="color_black" href='#'> Главная
+                            </a>
+                        </li>
+                        <li>
+                            <a class="color_black"
+                               href='{% static "Marketplace.html" %}'>
+                                Магазин</a>
+                        </li>
+                        <li>
+                            <a class="color_black"
+                               href='{% static "Collections.html" %}'>
+                                Коллекции</a>
+                        </li>
+                        <li>
+                            <a class="color_black"
+                               href='{% static "Creators.html" %}'>
+                                Художники</a>
+                        </li>
+                    </ul>
+                </div>
+{#                <!-- ========Поиск========= -->#}
+{#                <div class="header__search">#}
+{#                    <input type="text" placeholder="Поиск"/>#}
+{#                    <button class="header__result">#}
+{#                        <i class="ri-search-line"></i>#}
+{#                    </button>#}
+{#                </div>#}
+                <div class="header__btns">
+                    <a class="btn btn-grad btn-sm"
+                       href='{% static "Connect-wallet.html" %}'>
+                        <i class="ri-wallet-3-line"></i>
+                        Присоединить кошелёк</a>
+                    <a href='{% static "Home1.html" %}' id="connectbtn">
+                        <img width="45"
+                             src='{% static "shop/img/icons/metamask.svg" %}'
+                             alt="">
+                    </a>
+
+                </div>
+                <div class="header__burger js-header-burger"></div>
+
+                <div class="header__mobile js-header-mobile">
+                    <div class="header__mobile__menu space-y-40">
+                        <ul class="d-flex space-y-20">
                             <li><a class="color_black"
                                    href='{% static "Marketplace.html" %}'>
                                 Магазин</a></li>
@@ -160,136 +117,179 @@
                             <li><a class="color_black"
                                    href='{% static "Creators.html" %}'>
                                 Художники</a></li>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- ================== -->
-                    <div class="header__search">
-                        <input type="text" placeholder="Поиск"/>
-                        <button class="header__result">
-                            <i class="ri-search-line"></i>
-                        </button>
-                    </div>
-                    <div class="d-flex align-items-center space-x-20">
-                        <div class="header__notifications">
-                            <div class="js-notifications-icon">
-                                <i class="ri-notification-3-line"></i>
-                            </div>
-                            <div class="notifications_popup space-y-20">
-                                <div class="d-flex justify-content-between">
-                                    <h5> Уведомления</h5>
-                                    <a href='{% static "Activity.html" %}'
-                                       class="badge color_white">Посмотреть всё</a>
-                                </div>
-                                <div
-                                        class="item
-										space-x-20
-										d-flex
-										justify-content-between
-										align-items-center">
-                                    <img
-                                            class="thumb"
-                                            src='{% static "shop/img/notifications/1.png" %}'
-                                            alt="..."
-                                    />
-                                    <div class="details">
-                                        <a href='http://raroin.creabik.com/activity.html'>
-                                            <h6>Полученные деньги</h6></a>
-                                        <p>0.6 ETH</p>
-                                    </div>
-                                    <span class="circle"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header__avatar">
-                            <div class="price">
-                                <span>2.45 <strong>ETH</strong> </span>
-                            </div>
-                            <img
-                                    class="avatar"
-                                    src='{% static "shop/img/avatars/avatar_2.png" %}'
-                                    alt="avatar"
-                            />
-                            <div class="avatar_popup space-y-20">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <span> 13b9ebda035r178... </span>
-                                    <a href='{% url "shop:index" %}'
-                                       class="ml-2">
-                                        <i class="ri-file-copy-line"></i>
-                                    </a>
-                                </div>
-                                <div class="d-flex align-items-center space-x-10">
-                                    <img
-                                            class="coin"
-                                            src='{% static "shop/img/logos/coin.svg" %}'
-                                            alt="/"
-                                    />
-                                    <div class="info">
-                                        <p class="text-sm font-book text-gray-400">
-                                            Balance</p>
-                                        <p class="w-full text-sm font-bold text-green-500">
-                                            16.58 ETH</p>
-                                    </div>
-                                </div>
-                                <div class="hr"></div>
-                                <div class="links space-y-10">
-                                    <a href='{% static "Home1.html#" %}'>
-                                        <i class="ri-landscape-line"></i>
-                                        <span> Мои NFT</span>
-                                    </a>
-                                    <a href='{% static "edit_profile.html" %}'>
-                                        <i class="ri-pencil-line"></i> <span> Профиль</span>
-                                    </a>
-                                    <a href='{% static "Home1.html#" %}'>
-                                        <i class="ri-logout-circle-line"></i>
-                                        <span> Выйти</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header__btns">
-                            <a class="btn btn-primary btn-sm"
-                               href='{% static "Upload-type.html" %}'>Создать</a>
-                        </div>
-                        <div class="header__burger js-header-burger"></div>
-                    </div>
-                    <div class="header__mobile js-header-mobile">
-                        <div class="header__mobile__menu space-y-40">
-                            <ul class="d-flex space-y-20">
-                                <li><a class="color_black"
-                                       href='{% static "Marketplace.html" %}'>
-                                    Магазин</a></li>
-                                <li><a class="color_black"
-                                       href='{% static "Collections.html" %}'>
-                                    Коллекции</a></li>
-                                <li><a class="color_black"
-                                       href='{% static "Creators.html" %}'>
-                                    Художники</a></li>
 
-                            </ul>
-                            <div class="space-y-20">
-                                <div class="header__search in_mobile w-full">
-                                    <input type="text" placeholder="Поиск"/>
-                                    <button class="header__result">
-                                        <i class="ri-search-line"></i>
-                                    </button>
-                                </div>
-                                <a class="btn btn-grad btn-sm"
-                                   href='{% static "Connect-wallet.html" %}'>Присоединить кошелёк</a>
+                        </ul>
+                        <div class="space-y-20">
+                            <div class="header__search in_mobile w-full">
+                                <input type="text" placeholder="Поиск"/>
+                                <button class="header__result">
+                                    <i class="ri-search-line"></i>
+                                </button>
                             </div>
+                            <a class="btn btn-grad btn-sm"
+                               href='{% static "Connect-wallet.html" %}'>Присоединить кошелёк</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-    </div>
-</div>
+        </div>
+    </header>
+    <!-- ======Header_2==== -->
+    <header class="header__1 js-header header_wallet" id="header_admin">
+        <div class="container">
+            <div class="wrapper js-header-wrapper space-x-10">
+                <div class="header__logo">
+                    <a href='{% url "shop:index" %}'>
+                        <img
+                                class="header__logo"
+                                id="logo_js"
+                                src='{% static "shop/img/logos/Logo.png" %}'
+                                alt="logo"
+                        />
+                    </a>
+                </div>
+                <!-- ==================  -->
+                <div class="header__menu">
+                    <ul class="d-flex space-x-20">
+                        <li>
+                            <a class="color_black is_new"
+                               href='{% static "Home1.html#" %}'>Главная <i
+                                    class="ri-more-2-fill"></i></a>
+                        </li>
+                        <li><a class="color_black"
+                               href='{% static "Marketplace.html" %}'>
+                            Магазин</a></li>
+                        <li><a class="color_black"
+                               href='{% static "Collections.html" %}'>
+                            Коллекции</a></li>
+                        <li><a class="color_black"
+                               href='{% static "Creators.html" %}'>
+                            Художники</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <!-- ================== -->
+                <div class="header__search">
+                    <input type="text" placeholder="Поиск"/>
+                    <button class="header__result">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center space-x-20">
+                    <div class="header__notifications">
+                        <div class="js-notifications-icon">
+                            <i class="ri-notification-3-line"></i>
+                        </div>
+                        <div class="notifications_popup space-y-20">
+                            <div class="d-flex justify-content-between">
+                                <h5> Уведомления</h5>
+                                <a href='{% static "Activity.html" %}'
+                                   class="badge color_white">Посмотреть всё</a>
+                            </div>
+                            <div
+                                    class="item
+										space-x-20
+										d-flex
+										justify-content-between
+										align-items-center">
+                                <img
+                                        class="thumb"
+                                        src='{% static "shop/img/notifications/1.png" %}'
+                                        alt="..."
+                                />
+                                <div class="details">
+                                    <a href='http://raroin.creabik.com/activity.html'>
+                                        <h6>Полученные деньги</h6></a>
+                                    <p>0.6 ETH</p>
+                                </div>
+                                <span class="circle"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__avatar">
+                        <div class="price">
+                            <span>2.45 <strong>ETH</strong> </span>
+                        </div>
+                        <img
+                                class="avatar"
+                                src='{% static "shop/img/avatars/avatar_2.png" %}'
+                                alt="avatar"
+                        />
+                        <div class="avatar_popup space-y-20">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span> 13b9ebda035r178... </span>
+                                <a href='{% url "shop:index" %}'
+                                   class="ml-2">
+                                    <i class="ri-file-copy-line"></i>
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center space-x-10">
+                                <img
+                                        class="coin"
+                                        src='{% static "shop/img/logos/coin.svg" %}'
+                                        alt="/"
+                                />
+                                <div class="info">
+                                    <p class="text-sm font-book text-gray-400">
+                                        Balance</p>
+                                    <p class="w-full text-sm font-bold text-green-500">
+                                        16.58 ETH</p>
+                                </div>
+                            </div>
+                            <div class="hr"></div>
+                            <div class="links space-y-10">
+                                <a href='{% static "Home1.html#" %}'>
+                                    <i class="ri-landscape-line"></i>
+                                    <span> Мои NFT</span>
+                                </a>
+                                <a href='{% static "edit_profile.html" %}'>
+                                    <i class="ri-pencil-line"></i> <span> Профиль</span>
+                                </a>
+                                <a href='{% static "Home1.html#" %}'>
+                                    <i class="ri-logout-circle-line"></i>
+                                    <span> Выйти</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header__btns">
+                        <a class="btn btn-primary btn-sm"
+                           href='{% static "Upload-type.html" %}'>Создать</a>
+                    </div>
+                    <div class="header__burger js-header-burger"></div>
+                </div>
+                <div class="header__mobile js-header-mobile">
+                    <div class="header__mobile__menu space-y-40">
+                        <ul class="d-flex space-y-20">
+                            <li><a class="color_black"
+                                   href='{% static "Marketplace.html" %}'>
+                                Магазин</a></li>
+                            <li><a class="color_black"
+                                   href='{% static "Collections.html" %}'>
+                                Коллекции</a></li>
+                            <li><a class="color_black"
+                                   href='{% static "Creators.html" %}'>
+                                Художники</a></li>
 
-{% block content %}
-{% endblock content %}
-<body class="body">
+                        </ul>
+                        <div class="space-y-20">
+                            <div class="header__search in_mobile w-full">
+                                <input type="text" placeholder="Поиск"/>
+                                <button class="header__result">
+                                    <i class="ri-search-line"></i>
+                                </button>
+                            </div>
+                            <a class="btn btn-grad btn-sm"
+                               href='{% static "Connect-wallet.html" %}'>Присоединить кошелёк</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-
+    {% block content %}
+    {% endblock content %}
 
 <!-- Footer -->
 <footer class="footer__1">

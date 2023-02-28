@@ -4,51 +4,46 @@
 {% block title %} Вход {% endblock title %}
 
 {% block content %}
-<div class="edit_profile register login">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7"></div>
-            <div class="col-lg-5">
-                <div class="right_part space-y-20">
-                    <h1 class="color_white"> Добро пожаловать в NFT Market </h1>
-                    <p class="color_white" style="color: white !important">
-                        Ещё не зарегистрированы? <a href='{% static "register.html"%}'> Регистрация </a>
-                    </p>
-                    <div class="box edit_box w-full space-y-20">
-                        <div class="space-y-10">
-                            <span class="nameInput">Email </span>
-                            <div class="confirm">
-                                <input
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Enter email"
-                                />
-                            </div>
-                        </div>
-                        <div class="space-y-10">
-                            <span class="nameInput">Password</span> </span>
-                            <div class="confirm">
-                                <input
-                                        type="password"
-                                        class="form-control"
-                                        placeholder="Enter your password"
-                                />
-                            </div>
-                        </div>
-                        <a class="btn btn-white btn-sm color_green"> Click to verify </a>
-                        <a href='{% static "#"%}' class="btn btn-grad w-full btn-lg "> Create an account</a>
-                    </div>
-                    <div>
-                        <h2> Регистрация </h2>
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_table }}
-                            <button type="submit"> Зарегистрироваться </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+	<div class="edit_profile register login">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7"></div>
+			<div class="col-lg-5">
+				<div class="right_part space-y-20">
+					<h1 class="color_white"> Welcome to Raroin </h1>
+					<p class="color_white" style="color: white !important"
+					>Don't have an account yet? <a href="register.html"> Register </a>
+					</p>
+					<div class="box edit_box w-full space-y-20">
+						<div class="space-y-10">
+							<span class="nameInput">Email </span>
+							<div class="confirm">
+								<input
+										type="text"
+										class="form-control"
+										placeholder="Enter email"
+								/>
+							</div>
+						</div>
+						<div class="space-y-10">
+							<span class="nameInput">Password</span> </span>
+							<div class="confirm">
+								<input
+										type="password"
+										class="form-control"
+										placeholder="Enter your password"
+								/>
+							</div>
+						</div>
+						<a class="btn btn-white btn-sm color_green"> Click to verify </a>
+						<a href="#" class="btn btn-grad w-full btn-lg "> Create an account</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
+
 {% endblock content %}

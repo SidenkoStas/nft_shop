@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth import get_user_model
 from django.utils.safestring import mark_safe
 
 from users.models import Notification, CustomUser
@@ -14,9 +13,8 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ("username", "email", "photo", "bio", "get_notifications")
+    list_display = ("username", "email", "bio", "get_html_photo", "get_notifications")
     search_fields = ("username", "email")
-
 
     def get_html_photo(self, obj):
         if obj.photo:

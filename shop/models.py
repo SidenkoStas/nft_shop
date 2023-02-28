@@ -47,7 +47,7 @@ class Item(models.Model):
     artist = models.ForeignKey(User, on_delete=models.PROTECT,
                                verbose_name="Художник")
     image = models.ImageField(upload_to="nft/%Y/%m/%d/", verbose_name="NFT")
-    likes = models.ImageField(verbose_name="Лайки")
+    likes = models.IntegerField(verbose_name="Лайки")
     category = models.ForeignKey(to="Category", on_delete=models.PROTECT,
                                  verbose_name="Категория")
     creation_date = models.DateTimeField(auto_now_add=True,
