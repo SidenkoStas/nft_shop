@@ -2,7 +2,7 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from .forms import CustomUserCreationForm, LoginForm
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 
 
 class SinghUpView(CreateView):

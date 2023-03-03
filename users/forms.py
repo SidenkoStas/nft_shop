@@ -1,5 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, User
-from .models import CustomUser
+from .models import CustomUser, Notification
 from django import forms
 
 
@@ -8,7 +8,7 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ("photo", "username", "email", "first_name", "last_name",
-                  "bio")
+                  "bio", "notifications")
         widgets = {
             "username": forms.TextInput(attrs={"placeholder": "Логин"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email"}),
@@ -20,6 +20,9 @@ class CustomUserCreationForm(UserCreationForm):
             "photo": forms.FileInput(
                 attrs={"id": "imageUpload", "capture": ""}
             ),
+            "notifications": forms.CheckboxSelectMultiple(
+                attrs={"checked": ""}
+            ),
         }
 
     def __init__(self, *args, **kwargs):
@@ -28,6 +31,7 @@ class CustomUserCreationForm(UserCreationForm):
             attrs={'placeholder': 'Пароль'})
         self.fields['password2'].widget = forms.PasswordInput(
             attrs={'placeholder': 'Подтвердите пароль'})
+
 
 
 

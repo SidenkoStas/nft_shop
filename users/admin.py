@@ -24,9 +24,9 @@ class CustomUserAdmin(UserAdmin):
             return "-"
 
     def get_notifications(self, obj):
-        if obj.notifications:
-            return "Нет уведомлений"
-        return obj.notifications
+        if obj.notifications.all():
+            return obj.notifications.all()
+        return "Нет уведомлений"
 
     get_notifications.short_description = "Уведомления"
     get_html_photo.short_description = "Миниатюра"
