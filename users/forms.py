@@ -7,11 +7,19 @@ class CustomUserCreationForm(UserCreationForm):
     """Настройка формы для регистрации с изменениями в HTML форме."""
     class Meta:
         model = CustomUser
-        fields = ("photo", "username", "email", "bio")
+        fields = ("photo", "username", "email", "first_name", "last_name",
+                  "bio")
         widgets = {
             "username": forms.TextInput(attrs={"placeholder": "Логин"}),
             "email": forms.EmailInput(attrs={"placeholder": "Email"}),
-            "bio": forms.Textarea(attrs={'rows': 10, "placeholder": "Информация о себе"}),
+            "first_name": forms.TextInput(attrs={"placeholder": "Имя"}),
+            "last_name": forms.TextInput(attrs={"placeholder": "Фамилия"}),
+            "bio": forms.Textarea(
+                attrs={'rows': 6, "placeholder": "Информация о себе"}
+            ),
+            "photo": forms.FileInput(
+                attrs={"id": "imageUpload", "capture": ""}
+            ),
         }
 
     def __init__(self, *args, **kwargs):
@@ -20,20 +28,19 @@ class CustomUserCreationForm(UserCreationForm):
             attrs={'placeholder': 'Пароль'})
         self.fields['password2'].widget = forms.PasswordInput(
             attrs={'placeholder': 'Подтвердите пароль'})
-        self.fields["photo"].widget = forms.FileInput(
-            attrs={"id": "imageUpload", "required": "", "capture": ""}
-        )
+
 
 
 class CustomUserChangeForm(UserChangeForm):
     """Настройка формы редактирования полей пользователя."""
     class Meta:
         model = CustomUser
-        fields = ("photo", "username", "email")
+        fields = ("photo", "username", "email", "first_name", "last_name",
+                  "bio")
 
 
 class LoginForm(AuthenticationForm):
-    """"""
+    """Форма для авторизации пользователя по логину и паролю."""
     username = forms.CharField(widget=forms.TextInput(
         attrs={'class': 'validate', 'placeholder': 'Логин'}))
     password = forms.CharField(

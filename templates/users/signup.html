@@ -15,7 +15,7 @@
                         <p class="color_white" style="color: white !important"
                         >Вы можете установить предпочтительное отображаемое имя
                             и управлять другими личными настройками.</p>
-                        <form method="post">
+                        <form method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="box edit_box w-full space-y-20">
                                 <div class="row">
@@ -29,10 +29,16 @@
                                             </div>
                                             <div>
                                                 <h6 class="mb-1">Фото</h6>
-                                                <p class="mb-1"> Рекомендованный размер фото 400x400 🙌 </p>
+                                                <p class="mb-1"> Рекомендованный размер фото 400x400.
+                                                    Гифки тоже подойдут) 🙌 </p>
                                                 <div id="boxUpload">
-                                                    <a href='{% static "#"%}' class="btn btn-sm btn-dark">
-                                                        {{ form.photo }} Upload </a>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.photo.errors }}
+                                                        </strong>
+                                                    </p>
+                                                    <button type="submit" class="btn btn-sm btn-dark">
+                                                        {{ form.photo }} Загрузить </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,9 +47,34 @@
                                             <div class="space-y-20">
                                                 <div class="space-y-10">
                                                     <span class="nameInput">Отображаемый Логин</span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.username.errors }}
+                                                        </strong>
+                                                    </p>
                                                     {{ form.username }}
                                                 </div>
-
+                                                <div class="space-y-10">
+                                                    <span class="nameInput d-flex justify-content-between">Пароль
+                                                    <span class="txt_xs color_text">
+                                                                Пароль должен содержать минимум 8 символов.</span>
+                                                    </span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.passwords1.errors }}
+                                                        </strong>
+                                                    </p>
+                                                    {{ form.password1 }}
+                                                </div>
+                                                <div class="space-y-10">
+                                                    <span class="nameInput">Повторите пароль</span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.passwords2.errors }}
+                                                        </strong>
+                                                    </p>
+                                                    {{ form.password2 }}
+                                                </div>
                                                 <div class="space-y-10">
 														<span class="nameInput d-flex justify-content-between">
                                                             Email
@@ -51,11 +82,39 @@
                                                                 Укажите свой действующий Email.</span>
 														</span>
                                                     <div class="confirm">
+                                                        <p>
+                                                            <strong style="background-color: red">
+                                                                {{ form.email.errors }}
+                                                            </strong>
+                                                        </p>
                                                         {{ form.email }}
                                                     </div>
                                                 </div>
                                                 <div class="space-y-10">
+                                                    <span class="nameInput">Имя</span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.first_name.errors }}
+                                                        </strong>
+                                                    </p>
+                                                    {{ form.first_name }}
+                                                </div>
+                                                <div class="space-y-10">
+                                                    <span class="nameInput">Фамилия</span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.last_name.errors }}
+                                                        </strong>
+                                                    </p>
+                                                    {{ form.last_name }}
+                                                </div>
+                                                <div class="space-y-10">
                                                     <span class="nameInput">О себе</span>
+                                                    <p>
+                                                        <strong style="background-color: red">
+                                                            {{ form.bio.errors }}
+                                                        </strong>
+                                                    </p>
                                                     {{ form.bio }}
                                                 </div>
                                             </div>
@@ -71,13 +130,13 @@
                                             >
                                                 <span class="color_text"> Email Уведомления </span>
                                             </li>
-{#                                            <li class="d-flex space-x-10 switch_item">#}
-{#                                                <input type="checkbox" id="switch2" checked="" /><label#}
-{#                                                    for="switch2"#}
-{#                                            >Toggle</label#}
-{#                                            >#}
-{#                                                <span class="color_text"> New Bids </span>#}
-{#                                            </li>#}
+                                            <li class="d-flex space-x-10 switch_item">
+                                                <input type="checkbox" id="switch2" checked="" /><label
+                                                    for="switch2"
+                                            >Toggle</label
+                                            >
+                                                <span class="color_text"> New Bids </span>
+                                            </li>
                                             <li class="d-flex space-x-10 switch_item">
                                                 <input type="checkbox" id="switch3" checked="" /><label
                                                     for="switch3"
@@ -85,13 +144,13 @@
                                             >
                                                 <span class="color_text"> Покупка NFT </span>
                                             </li>
-{#                                            <li class="d-flex space-x-10 switch_item">#}
-{#                                                <input type="checkbox" id="switch4" checked="" /><label#}
-{#                                                    for="switch4"#}
-{#                                            >Toggle</label#}
-{#                                            >#}
-{#                                                <span class="color_text"> People Followed </span>#}
-{#                                            </li>#}
+                                            <li class="d-flex space-x-10 switch_item">
+                                                <input type="checkbox" id="switch4" checked="" /><label
+                                                    for="switch4"
+                                            >Toggle</label
+                                            >
+                                                <span class="color_text"> People Followed </span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -100,7 +159,7 @@
                                     Пожалуйста, потратьте пару менут для того, чтобы прочитать
                                     Общие условия предоставления услуг. Для продолжения, вам необходимо
                                     принять условия соглашения.</p>
-                                <a href='{% static "#"%}' class="btn btn-grad">Регистрация</a>
+                                <button type="submit" class="btn btn-grad">Регистрация</button>
                             </div>
                         </form>
                     </div>

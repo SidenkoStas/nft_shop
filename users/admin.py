@@ -20,6 +20,8 @@ class CustomUserAdmin(UserAdmin):
     def get_html_photo(self, obj):
         if obj.photo:
             return mark_safe(f"<img src='{obj.photo.url}' width=50>")
+        else:
+            return "-"
 
     def get_notifications(self, obj):
         if obj.notifications:
