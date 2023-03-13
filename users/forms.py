@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm,\
+    AuthenticationForm
 from .models import CustomUser, Notification
 from django import forms
 
@@ -20,10 +21,14 @@ class CustomUserCreationForm(UserCreationForm):
             "photo": forms.FileInput(
                 attrs={"id": "imageUpload", "capture": ""}
             ),
-            "notifications": forms.CheckboxSelectMultiple(
-                attrs={"checked": ""}
-            ),
         }
+
+    notifications = forms.ModelMultipleChoiceField(
+        queryset=Notification.objects.all(),
+        widget=forms.CheckboxSelectMultiple(
+            attrs={"checked": ""},
+        ),
+    )
 
     def __init__(self, *args, **kwargs):
         super(CustomUserCreationForm, self).__init__(*args, **kwargs)
@@ -33,14 +38,12 @@ class CustomUserCreationForm(UserCreationForm):
             attrs={'placeholder': 'Подтвердите пароль'})
 
 
-
-
 class CustomUserChangeForm(UserChangeForm):
     """Настройка формы редактирования полей пользователя."""
     class Meta:
         model = CustomUser
         fields = ("photo", "username", "email", "first_name", "last_name",
-                  "bio")
+                  "bio", "notifications")
 
 
 class LoginForm(AuthenticationForm):

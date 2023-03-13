@@ -12434,9 +12434,9 @@ label {
 /*          transform: translateX(-100%);*/
 /*}*/
 
-label:active:after {
-  width: 44px;
-}
+/*label:active:after {*/
+/*  width: 44px;*/
+/*}*/
 
 .choose_collection {
   border-radius: 12px;

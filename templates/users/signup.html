@@ -124,37 +124,18 @@
                                         <h3 class="mb-20 mt-40">📮 Уведомления </h3>
 
                                             <ul class="space-y-10">
-                                                {% for notice in form.notifications %}
-                                                    <li class="d-flex space-x-10 switch_item">
-                                                        {{ notice }}
-                                                    </li>
+                                                {{ form.notifications }}
 
-                                                {% endfor %}
+{#                                                {% for notice in form.notifications %}#}
+{#                                                    <li class="d-flex space-x-10 switch_item">#}
+{#                                                        {{ notice }}#}
+{#                                                    </li>#}
+{#                                                {% endfor %}#}
+
 {#                                                <li class="d-flex space-x-10 switch_item">#}
 {#                                                    <input type="checkbox" id="switch1" checked="" />#}
 {#                                                    <label for="switch1">  Технические Уведомления </label>#}
 {#                                                </li>#}
-                                                {#                                            <li class="d-flex space-x-10 switch_item">#}
-                                                {#                                                <input type="checkbox" id="switch2" checked="" /><label#}
-                                                {#                                                    for="switch2"#}
-                                                {#                                            >Toggle</label#}
-                                                {#                                            >#}
-                                                {#                                                <span class="color_text"> Покупка NFT </span>#}
-                                                {#                                            </li>#}
-                                                {#                                            <li class="d-flex space-x-10 switch_item">#}
-                                                {#                                                <input type="checkbox" id="switch3" checked="" /><label#}
-                                                {#                                                    for="switch3"#}
-                                                {#                                            >Toggle</label#}
-                                                {#                                            >#}
-                                                {#                                                <span class="color_text"> Пустая </span>#}
-                                                {#                                            </li>#}
-                                                {#                                            <li class="d-flex space-x-10 switch_item">#}
-                                                {#                                                <input type="checkbox" id="switch4" checked="" /><label#}
-                                                {#                                                    for="switch4"#}
-                                                {#                                            >Toggle</label#}
-                                                {#                                            >#}
-                                                {#                                                <span class="color_text"> People Followed </span>#}
-                                                {#                                            </li>#}
                                             </ul>
                                     </div>
                                 </div>

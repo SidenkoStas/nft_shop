@@ -13,6 +13,10 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
+    fieldsets = (
+        *UserAdmin.fieldsets,
+        (None, {"fields": ("photo", "bio", "notifications")})
+    )
     list_display = ("username", "email", "bio", "get_html_photo",
                     "get_notifications")
     search_fields = ("username", "email")
@@ -24,9 +28,7 @@ class CustomUserAdmin(UserAdmin):
             return "-"
 
     def get_notifications(self, obj):
-        if obj.notifications.all():
-            return obj.notifications.all()
-        return "Нет уведомлений"
+        return ", ".join([x.notification for x in obj.notifications.all()])
 
     get_notifications.short_description = "Уведомления"
     get_html_photo.short_description = "Миниатюра"

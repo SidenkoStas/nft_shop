@@ -27,7 +27,9 @@ class CustomUser(AbstractUser):
     )
     bio = models.TextField(blank=True, verbose_name="Биография")
     notifications = models.ManyToManyField(
-        Notification, blank=True, verbose_name="Уведомления"
+        Notification, blank=True, verbose_name="Уведомления",
+        related_name="notifications",
+
     )
 
     def get_notifications(self):

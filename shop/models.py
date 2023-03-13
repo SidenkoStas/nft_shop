@@ -55,7 +55,6 @@ class Item(models.Model):
     collections = models.ManyToManyField("Collections", blank=True,
                                          verbose_name="Коллекции")
 
-
     class Meta:
         verbose_name = "NFT token"
         verbose_name_plural = "NFT tokens"
