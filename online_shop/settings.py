@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # Мои приложения
     'shop.apps.ShopConfig',
-    "users.apps.UsersConfig"
+    "users.apps.UsersConfig",
+    "likes.apps.LikesConfig"
 ]
 
 MIDDLEWARE = [

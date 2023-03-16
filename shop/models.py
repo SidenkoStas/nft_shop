@@ -1,12 +1,15 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth import get_user_model
-
+from django.contrib.contenttypes.fields import GenericRelation
+from django.contrib.contenttypes.models import ContentType
+from likes.models import Like
 
 User = get_user_model()
 
 
 class Category(models.Model):
+    """Модель категорий для NFT токенов."""
     title = models.CharField(max_length=50, verbose_name="Категории")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -21,6 +24,7 @@ class Category(models.Model):
 
 
 class Collections(models.Model):
+    """Модель для коллекций NFT токенов, не относится к категориям."""
     title = models.CharField(max_length=150, verbose_name="Коллекция")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -38,6 +42,7 @@ class Collections(models.Model):
 
 
 class Item(models.Model):
+    """Модель NFT токенов."""
     title = models.CharField(max_length=150, verbose_name="Название")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -45,20 +50,24 @@ class Item(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2,
                                 verbose_name="Цена")
     artist = models.ForeignKey(User, on_delete=models.PROTECT,
-                               verbose_name="Художник")
+                               verbose_name="Художник", related_name="artist")
     image = models.ImageField(upload_to="nft/%Y/%m/%d/", verbose_name="NFT")
-    likes = models.IntegerField(verbose_name="Лайки")
     category = models.ForeignKey(to="Category", on_delete=models.PROTECT,
                                  verbose_name="Категория")
     creation_date = models.DateTimeField(auto_now_add=True,
                                          verbose_name="Дата создания")
     collections = models.ManyToManyField("Collections", blank=True,
                                          verbose_name="Коллекции")
+    likes = GenericRelation(Like)
 
     class Meta:
         verbose_name = "NFT token"
         verbose_name_plural = "NFT tokens"
         ordering = ["-creation_date", "title"]
+
+    @property
+    def total_likes(self):
+        return f"{self.likes.count()}"
 
     def get_absolute_url(self):
         return reverse("shop:index")
@@ -67,37 +76,51 @@ class Item(models.Model):
         return f"{self.title}"
 
 
-class HistoryNft(models.Model):
-    slug = models.SlugField(max_length=250, unique=True, db_index=True,
-                            verbose_name="Slug")
-    nft = models.ForeignKey(to=Item, on_delete=models.PROTECT,
-                            verbose_name="NFT")
-    buyers = models.ForeignKey(User, on_delete=models.PROTECT,
-                               verbose_name="Покупатель")
-    purchase_date = models.DateTimeField(auto_now_add=True)
+class OwnerNFT(models.Model):
+    """Владельцы создавшие токены или купившиеего."""
+    owner = models.ForeignKey(User, on_delete=models.PROTECT,
+                              verbose_name="Владелец", related_name="owner")
+    item = models.ManyToManyField("Item", verbose_name="NFT токен")
 
     class Meta:
-        verbose_name = "История NFT"
-        verbose_name_plural = "Истории NFT"
-        ordering = ["-purchase_date"]
+        verbose_name = "Владелец"
+        verbose_name_plural = "Владельцы"
 
     def __str__(self):
-        return f"{self.nft} - {self.buyers}"
+        return f"{self.owner} - {self.item}"
 
 
-class Bits(models.Model):
-    slug = models.SlugField(max_length=250, unique=True, db_index=True,
-                            verbose_name="Slug")
-    buyers = models.ForeignKey(User, on_delete=models.PROTECT,
-                               verbose_name="Покупатель")
-    nft = models.ForeignKey(to=Item, on_delete=models.PROTECT,
-                            verbose_name="NFT")
-    bit = models.DecimalField(max_digits=7, decimal_places=4,
-                              verbose_name="Ставка")
-
-    class Meta:
-        verbose_name = "Ставка"
-        verbose_name_plural = "Ставки"
-
-    def __str__(self):
-        return f"{self.buyers} - {self.bit}"
+# class HistoryNft(models.Model):
+#     slug = models.SlugField(max_length=250, unique=True, db_index=True,
+#                             verbose_name="Slug")
+#     nft = models.ForeignKey(to="Item", on_delete=models.PROTECT,
+#                             verbose_name="NFT")
+#     buyers = models.ForeignKey(User, on_delete=models.PROTECT,
+#                                verbose_name="Покупатель")
+#     purchase_date = models.DateTimeField(auto_now_add=True)
+#
+#     class Meta:
+#         verbose_name = "История NFT"
+#         verbose_name_plural = "Истории NFT"
+#         ordering = ["-purchase_date"]
+#
+#     def __str__(self):
+#         return f"{self.nft} - {self.buyers}"
+#
+#
+# class Bits(models.Model):
+#     slug = models.SlugField(max_length=250, unique=True, db_index=True,
+#                             verbose_name="Slug")
+#     buyers = models.ForeignKey(User, on_delete=models.PROTECT,
+#                                verbose_name="Покупатель")
+#     nft = models.ForeignKey(to="Item", on_delete=models.PROTECT,
+#                             verbose_name="NFT")
+#     bit = models.DecimalField(max_digits=7, decimal_places=4,
+#                               verbose_name="Ставка")
+#
+#     class Meta:
+#         verbose_name = "Ставка"
+#         verbose_name_plural = "Ставки"
+#
+#     def __str__(self):
+#         return f"{self.buyers} - {self.bit}"

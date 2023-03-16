@@ -84,44 +84,38 @@
                     </li>
                 </ul>
             </div>
-            {#                <!-- ========Поиск========= -->#}
-            {#                <div class="header__search">#}
-            {#                    <input type="text" placeholder="Поиск"/>#}
-            {#                    <button class="header__result">#}
-            {#                        <i class="ri-search-line"></i>#}
-            {#                    </button>#}
-            {#                </div>#}
+
             <!-- Меню авторизации -->
             {% if user.is_authenticated %}
                 <div class="d-flex align-items-center space-x-20">
-                    <div class="header__notifications">
-                        <div class="js-notifications-icon">
-                            <i class="ri-notification-3-line"></i>
-                        </div>
-                        <div class="notifications_popup space-y-20">
-                            <div class="d-flex justify-content-between">
-                                <h5> Уведомления</h5>
-                                <a href="Activity.html" class="badge color_white">Все</a>
-                            </div>
-                            <div
-                                    class="item
-										space-x-20
-										d-flex
-										justify-content-between
-										align-items-center">
-                                <img
-                                        class="thumb"
-                                        src="{% static 'shop/img/notifications/1.png' %}"
-                                        alt="..."
-                                />
-                                <div class="details">
-                                    <a href="activity.html"> <h6>Возвращённые деньги</h6> </a>
-                                    <p>0.6 ETH</p>
-                                </div>
-                                <span class="circle"></span>
-                            </div>
-                        </div>
-                    </div>
+{#                    <div class="header__notifications">#}
+{#                        <div class="js-notifications-icon">#}
+{#                            <i class="ri-notification-3-line"></i>#}
+{#                        </div>#}
+{#                        <div class="notifications_popup space-y-20">#}
+{#                            <div class="d-flex justify-content-between">#}
+{#                                <h5> Уведомления</h5>#}
+{#                                <a href="Activity.html" class="badge color_white">Все</a>#}
+{#                            </div>#}
+{#                            <div#}
+{#                                    class="item#}
+{#										space-x-20#}
+{#										d-flex#}
+{#										justify-content-between#}
+{#										align-items-center">#}
+{#                                <img#}
+{#                                        class="thumb"#}
+{#                                        src="{% static 'shop/img/notifications/1.png' %}"#}
+{#                                        alt="..."#}
+{#                                />#}
+{#                                <div class="details">#}
+{#                                    <a href="#"> <h6>Возвращённые деньги</h6> </a>#}
+{#                                    <p>0.6 ETH</p>#}
+{#                                </div>#}
+{#                                <span class="circle"></span>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
                     <div class="header__avatar">
                         <div class="price">
                             <span>2.45 <strong>ETH</strong> </span>
@@ -151,12 +145,12 @@
                             </div>
                             <div class="hr"></div>
                             <div class="links space-y-10">
-                                <a href="#">
-                                    <i class="ri-landscape-line"></i> <span> Мои NFT</span>
+                                <a href="{% url 'shop:profile' %}">
+                                    <i class="ri-landscape-line"></i> <span> Моя страница</span>
                                 </a>
-                                <a href="edit_profile.html">
-                                    <i class="ri-pencil-line"></i> <span> Профиль</span>
-                                </a>
+{#                                <a href="edit_profile.html">#}
+{#                                    <i class="ri-pencil-line"></i> <span> Профиль</span>#}
+{#                                </a>#}
                                 <a href="{% url 'users:logout' %}">
                                     <i class="ri-logout-circle-line"></i> <span> Выйти</span>
                                 </a>
@@ -411,7 +405,7 @@
             <div class="col-lg-2 col-6">
                 <h6 class="footer__title"></h6>
                 <ul class="footer__list" style="margin-top: 47px">
-                    <li><a href='{% static "Profile.html" %}'> Профиль </a>
+                    <li><a href='{% static "profile.html" %}'> Профиль </a>
                     </li>
                     <li><a href='{% static "Upload.html" %}'> Загрузить </a>
                     </li>
