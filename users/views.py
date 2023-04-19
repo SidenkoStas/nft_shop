@@ -1,6 +1,7 @@
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 from .forms import CustomUserCreationForm, LoginForm
 from django.contrib.auth import authenticate, login
 from users.models import CustomUser
@@ -25,3 +26,9 @@ class SinghUpView(CreateView):
 class LoginUser(LoginView):
     template_name = "users/login.html"
     authentication_form = LoginForm
+
+
+class ProfileView(DetailView):
+    model = CustomUser
+    template_name = "users/profile.html"
+

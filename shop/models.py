@@ -61,8 +61,8 @@ class Item(models.Model):
     likes = GenericRelation(Like)
 
     class Meta:
-        verbose_name = "NFT token"
-        verbose_name_plural = "NFT tokens"
+        verbose_name = "NFT токен"
+        verbose_name_plural = "NFT токены"
         ordering = ["-creation_date", "title"]
 
     @property
@@ -77,7 +77,7 @@ class Item(models.Model):
 
 
 class OwnerNFT(models.Model):
-    """Владельцы создавшие токены или купившиеего."""
+    """Владельцы создавшие токены или купившего."""
     owner = models.ForeignKey(User, on_delete=models.PROTECT,
                               verbose_name="Владелец", related_name="owner")
     item = models.ManyToManyField("Item", verbose_name="NFT токен")
@@ -88,39 +88,3 @@ class OwnerNFT(models.Model):
 
     def __str__(self):
         return f"{self.owner} - {self.item}"
-
-
-# class HistoryNft(models.Model):
-#     slug = models.SlugField(max_length=250, unique=True, db_index=True,
-#                             verbose_name="Slug")
-#     nft = models.ForeignKey(to="Item", on_delete=models.PROTECT,
-#                             verbose_name="NFT")
-#     buyers = models.ForeignKey(User, on_delete=models.PROTECT,
-#                                verbose_name="Покупатель")
-#     purchase_date = models.DateTimeField(auto_now_add=True)
-#
-#     class Meta:
-#         verbose_name = "История NFT"
-#         verbose_name_plural = "Истории NFT"
-#         ordering = ["-purchase_date"]
-#
-#     def __str__(self):
-#         return f"{self.nft} - {self.buyers}"
-#
-#
-# class Bits(models.Model):
-#     slug = models.SlugField(max_length=250, unique=True, db_index=True,
-#                             verbose_name="Slug")
-#     buyers = models.ForeignKey(User, on_delete=models.PROTECT,
-#                                verbose_name="Покупатель")
-#     nft = models.ForeignKey(to="Item", on_delete=models.PROTECT,
-#                             verbose_name="NFT")
-#     bit = models.DecimalField(max_digits=7, decimal_places=4,
-#                               verbose_name="Ставка")
-#
-#     class Meta:
-#         verbose_name = "Ставка"
-#         verbose_name_plural = "Ставки"
-#
-#     def __str__(self):
-#         return f"{self.buyers} - {self.bit}"

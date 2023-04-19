@@ -12,7 +12,7 @@
     <meta name="language" content="Russian"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>
-        {% block title %} Главная {% endblock title %}
+        {% block title %}  Коллекционирование и продажа NFT {% endblock title %}
     </title>
     <meta name="msapplication-TileColor" content="#da532c"/>
     <meta name="theme-color" content="#ffffff"/>
@@ -145,7 +145,7 @@
                             </div>
                             <div class="hr"></div>
                             <div class="links space-y-10">
-                                <a href="{% url 'shop:profile' %}">
+                                <a href="{% url 'users:profile' user.pk %}">
                                     <i class="ri-landscape-line"></i> <span> Моя страница</span>
                                 </a>
 {#                                <a href="edit_profile.html">#}

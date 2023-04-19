@@ -1,7 +1,9 @@
 {% extends "shop/base.html" %}
 {% load static %}
 
-{% block title %} Регистрация {% endblock title %}
+{% block title %}
+    {{ block.super }} | Регистрация
+{% endblock title %}
 
 {% block content %}
 
@@ -23,7 +25,7 @@
                                         <div class="avatars space-x-20 mb-30">
                                             <div id="profile-container">
                                                 <img id="profileImage"
-                                                     src='{% static "shop/img/avatars/avatar_3.png"%}'
+                                                     src='{% static "shop/img/avatars/avatar_3.png" %}'
                                                      alt="Avatar"
                                                      class="avatar avatar-lg border-0">
                                             </div>

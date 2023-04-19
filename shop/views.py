@@ -1,20 +1,11 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from shop.models import Item
 from django.views import View
 
 
 def index(request):
     return render(request, "shop/index.html")
-
-
-def profile(request):
-    return render(request, "shop/profile.html")
-
-
-class ProfileView(ListView):
-    model = Item
-    template_name = "shop/profile.html"
 
 
 class AddDropLikes(View):

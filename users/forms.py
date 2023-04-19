@@ -5,7 +5,9 @@ from django import forms
 
 
 class CustomUserCreationForm(UserCreationForm):
-    """Настройка формы для регистрации с изменениями в HTML форме."""
+    """
+    Настройка формы для регистрации с изменениями в HTML форме.
+    """
     class Meta:
         model = CustomUser
         fields = ("photo", "username", "email", "first_name", "last_name",
@@ -39,7 +41,9 @@ class CustomUserCreationForm(UserCreationForm):
 
 
 class CustomUserChangeForm(UserChangeForm):
-    """Настройка формы редактирования полей пользователя."""
+    """
+    Настройка формы редактирования полей пользователя.
+    """
     class Meta:
         model = CustomUser
         fields = ("photo", "username", "email", "first_name", "last_name",
@@ -47,7 +51,9 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class LoginForm(AuthenticationForm):
-    """Форма для авторизации пользователя по логину и паролю."""
+    """
+    Форма для авторизации пользователя по логину и паролю.
+    """
     username = forms.CharField(widget=forms.TextInput(
         attrs={'class': 'validate', 'placeholder': 'Логин'}))
     password = forms.CharField(

@@ -1,10 +1,12 @@
 from django.db import models
-from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 
 
 class Notification(models.Model):
-    """Модель уведомлений, меняется только админом."""
+    """
+    Модель уведомлений для рассылки пользователям,
+    меняется только админом.
+    """
     slug = models.SlugField(
         max_length=250, unique=True, db_index=True, verbose_name="Slug"
     )
@@ -19,7 +21,9 @@ class Notification(models.Model):
 
 
 class CustomUser(AbstractUser):
-    """Своя модель пользователей с основой от Django."""
+    """
+    Своя модель пользователей которая расширяет модель от Django.
+    """
     photo = models.ImageField(
         upload_to="profile_photos/%Y/%m/%d/", blank=True, null=True,
         default="default.png",
@@ -32,11 +36,14 @@ class CustomUser(AbstractUser):
 
     )
 
-    def get_notifications(self):
-        return "\n".join([p.notifications for p in self.notifications.all()])
+    def get_items(self):
+        return self.artist.all()
 
-    def get_absolute_url(self):
-        return reverse("user")
+    def get_notifications(self):
+        """
+        Возвращает список уведомлений к которым подписан пользователь.
+        """
+        return "\n".join([p.notification for p in self.notifications.all()])
 
     class Meta:
         verbose_name = "Пользователь"

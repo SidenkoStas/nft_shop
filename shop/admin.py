@@ -19,3 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Item, ItemAdmin)
+
+# Замена заголовков в админ панели:
+admin.site.site_title = "Коллекционирование и продажа NFT"
+admin.site.site_header = "Коллекционирование и продажа NFT"

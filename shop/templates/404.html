@@ -2,7 +2,9 @@
 {% load static %}
 
 
-{% block title %} 404 Error {% endblock title %}
+{% block title %}
+    {{ block.super }} | 404 Error
+{% endblock title %}
 
 {% block content %}
     <div class="not__found">
