@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 
 
@@ -20,6 +21,7 @@ class Notification(models.Model):
         return f"{self.notification}"
 
 
+
 class CustomUser(AbstractUser):
     """
     Своя модель пользователей которая расширяет модель от Django.
@@ -35,9 +37,6 @@ class CustomUser(AbstractUser):
         related_name="notifications",
 
     )
-
-    def get_items(self):
-        return self.artist.all()
 
     def get_notifications(self):
         """

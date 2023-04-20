@@ -9,7 +9,9 @@ User = get_user_model()
 
 
 class Category(models.Model):
-    """Модель категорий для NFT токенов."""
+    """
+    Модель категорий для NFT токенов.
+    """
     title = models.CharField(max_length=50, verbose_name="Категории")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -24,7 +26,9 @@ class Category(models.Model):
 
 
 class Collections(models.Model):
-    """Модель для коллекций NFT токенов, не относится к категориям."""
+    """
+    Модель для коллекций NFT токенов, не относится к категориям.
+    """
     title = models.CharField(max_length=150, verbose_name="Коллекция")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -42,7 +46,9 @@ class Collections(models.Model):
 
 
 class Item(models.Model):
-    """Модель NFT токенов."""
+    """
+    Модель NFT токенов.
+    """
     title = models.CharField(max_length=150, verbose_name="Название")
     slug = models.SlugField(max_length=250, unique=True, db_index=True,
                             verbose_name="Slug")
@@ -77,7 +83,9 @@ class Item(models.Model):
 
 
 class OwnerNFT(models.Model):
-    """Владельцы создавшие токены или купившего."""
+    """
+    Владельцы создавшие токены или купившего.
+    """
     owner = models.ForeignKey(User, on_delete=models.PROTECT,
                               verbose_name="Владелец", related_name="owner")
     item = models.ManyToManyField("Item", verbose_name="NFT токен")

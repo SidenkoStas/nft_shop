@@ -20,9 +20,11 @@
                         <div class="avatars d-flex space-x-20
 										align-items-center">
                             <div class="avatar_wrap">
+                                {% if user.photo %}
                                 <img class="avatar avatar-lg"
                                      src='{{ user.photo.url }}'
                                      alt="avatar">
+                                {% endif %}
                             </div>
                             <h5>{{ user.username }}</h5>
                         </div>
@@ -97,49 +99,14 @@
                                     <h4>105</h4>
                                 </div>
                                 <div class="col-6">
-                                    <span class="txt_sm color_text">Creations</span>
-                                    <h4>{{ get_item | count }}</h4>
+                                    <span class="txt_sm color_text">Всего моих NFT</span>
+                                    <h4>{{ total_items }}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="space-y-10">
-                        <h5>Follow me</h5>
-                        <div class="box">
-                            <ul class="social_profile space-y-10 overflow-hidden">
-                                <li>
-                                    <a href='{% static "#"%}'>
-                                        <i class="ri-facebook-line"></i>
-                                        <span class="color_text">facebook/</span>
-                                        @creabik
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='{% static "#"%}'>
-                                        <i class="ri-messenger-line"></i>
-                                        <span class="color_text"> messenger/</span>
-                                        @creabik
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='{% static "#"%}'>
-                                        <i class="ri-whatsapp-line"></i>
-                                        <span class="color_text"> whatsapp/</span>
-                                        @creabik
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='{% static "#"%}'>
-                                        <i class="ri-youtube-line"></i>
-                                        <span class="color_text">youtube/</span>
-                                        @creabik
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
-                <p class="text-center txt_sm mt-20 color_text">Since 2021</p>
+                <p class="text-center txt_sm mt-20 color_text">C {{ user.date_joined }}</p>
             </div>
         </div>
         <div class="col-lg-9 col-md-12 order-md-1 order-0">
@@ -153,17 +120,17 @@
                                     <a
                                             class="btn btn-white btn-sm active"
                                             data-toggle="tab"
-                                            href='{% static "#tabs-1"%}'
+                                            href='#tabs-1'
                                             role="tab">
-                                        Creations</a>
+                                        NFT токены</a>
                                 </li>
                                 <li class="nav-item">
                                     <a
                                             class="btn btn-white btn-sm"
                                             data-toggle="tab"
-                                            href='{% static "#tabs-2"%}'
+                                            href="#tabs-2"
                                             role="tab">
-                                        Collections</a>
+                                        Коллекции</a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->
@@ -192,600 +159,30 @@
                             <div class="tab-pane active" id="tabs-1"
                                  role="tabpanel">
                                 <div class="row mb-30_reset">
+                                    {% for item in items %}
                                     <div class="col-xl-4 col-lg-6 col-md-6">
                                         <div class="card__item three">
                                             <div class="card_body space-y-10">
                                                 <!-- =============== -->
                                                 <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_1.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
+                                                    <img src='{{ item.image.url }}'
+                                                            alt="">
+                                                    <a href='{% static "#" %}' class="likes space-x-3">
+                                                        <i class="ri-heart-3-fill"></i>
                                                         <span class="txt_sm">1.2k</span>
                                                     </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
                                                 </div>
                                                 <!-- =============== -->
                                                 <h6 class="card_title">
                                                     <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        pop art Painting
+                                                       href='{% static "Item-details.html" %}'>
+                                                        {{ item.title }}
                                                     </a>
                                                 </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_1.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_2.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @luka_fenn..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.001
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.022
-																		ETH</span>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-lg-6 col-md-6">
-                                        <div class="card__item three">
-                                            <div class="card_body space-y-10">
-                                                <!-- =============== -->
-                                                <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_2.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
-                                                        <span class="txt_sm">3.5k</span>
-                                                    </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- =============== -->
-                                                <h6 class="card_title">
-                                                    <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        Dodo hide the seek
-                                                    </a>
-                                                </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_3.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_4.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @noel_meon..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.035
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.075
-																		ETH</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-md-6">
-                                        <div class="card__item three">
-                                            <div class="card_body space-y-10">
-                                                <!-- =============== -->
-                                                <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_3.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
-                                                        <span class="txt_sm">2.4k</span>
-                                                    </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- =============== -->
-                                                <h6 class="card_title">
-                                                    <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        couple Abstract Painting
-                                                    </a>
-                                                </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_5.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_6.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @zion_ach..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.008
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.074
-																		ETH</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-md-6">
-                                        <div class="card__item three">
-                                            <div class="card_body space-y-10">
-                                                <!-- =============== -->
-                                                <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_4.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
-                                                        <span class="txt_sm">1.2k</span>
-                                                    </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- =============== -->
-                                                <h6 class="card_title">
-                                                    <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        smoking Abstract Painting
-                                                    </a>
-                                                </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_7.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_8.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @nacer_dahr..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.002
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.063
-																		ETH</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-md-6">
-                                        <div class="card__item three">
-                                            <div class="card_body space-y-10">
-                                                <!-- =============== -->
-                                                <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_5.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
-                                                        <span class="txt_sm">3.5k</span>
-                                                    </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- =============== -->
-                                                <h6 class="card_title">
-                                                    <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        The girl with the firefly
-                                                    </a>
-                                                </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_9.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_10.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @noel_meon..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.063
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.054
-																		ETH</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-4 col-lg-6 col-md-6">
-                                        <div class="card__item three">
-                                            <div class="card_body space-y-10">
-                                                <!-- =============== -->
-                                                <div class="card_head">
-                                                    <img
-                                                            src='{% static "shop/img/items/item_6.png" %}'
-                                                            alt=""
-                                                    />
-                                                    <a href='{% static "#"%}' class="likes
-																	space-x-3">
-                                                        <i
-                                                                class="ri-heart-3-fill"></i>
-                                                        <span class="txt_sm">2.4k</span>
-                                                    </a>
-                                                    <div class="action">
-                                                        <a href='{% static "#"%}' class="btn
-																		btn-primary btn-sm
-																		btn_auction"
-                                                           data-toggle="modal"
-                                                           data-target="#popup_bid">
-                                                            <i
-                                                                    class="ri-auction-line
-																			color_white"></i>
-                                                            Place Your Bid
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <!-- =============== -->
-                                                <h6 class="card_title">
-                                                    <a class="color_black"
-                                                       href='{% static "Item-details.html"%}'>
-                                                        couple Abstract Painting
-                                                    </a>
-                                                </h6>
-
-                                                <div class="card_footer d-block
-																space-y-10">
-                                                    <div class="d-flex
-																	justify-content-between
-																	align-items-center">
-                                                        <div class="creators
-																		space-x-10">
-                                                            <div class="avatars
-																			-space-x-20">
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_10.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                                <a href="profile.html">
-                                                                    <img
-                                                                            src='{% static "shop/img/avatars/avatar_12.png" %}'
-                                                                            alt="Avatar"
-                                                                            class="avatar
-																					avatar-sm"
-                                                                    />
-                                                                </a>
-                                                            </div>
-                                                            <a href="profile.html">
-                                                                <p
-                                                                        class="avatars_name
-																				txt_sm">
-                                                                    @zain_gal..
-                                                                </p>
-                                                            </a>
-                                                        </div>
-                                                        <a href='{% static "#"%}'
-                                                           class="space-x-3">
-                                                            <p
-                                                                    class="color_green
-																			txt_sm">0.034
-                                                                ETH</p>
-                                                        </a>
-                                                    </div>
-                                                    <div class="hr"></div>
-                                                    <div
-
-                                                            class="d-flex
-																	align-items-center
-																	space-x-10">
-                                                        <i
-                                                                class="ri-vip-crown-line"></i>
-                                                        <p class="color_text
-																		txt_sm"
-                                                           style="width: auto">
-                                                            Highest bid
-                                                        </p>
-                                                        <span class="color_black
-																		txt_sm">0.084
-																		ETH</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">

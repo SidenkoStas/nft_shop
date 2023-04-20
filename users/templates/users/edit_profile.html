@@ -1,0 +1,118 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ block.super }} | Редактирование профиля
+{% endblock title %}
+
+{% block content %}
+    <body class="body">
+    <div class="mb-50">
+        <div class="hero__profile">
+            <div class="cover">
+                <img src='{% static "shop/img/bg/prrofile.png" %}' alt="">
+            </div>
+        </div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div style="margin-left: 50px">
+            <div class="avatars space-x-20 mb-30">
+                <div id="profile-container">
+                    <img id="profileImage" src="{{ user.photo.url }}"
+                         alt="Avatar" class="avatar avatar-lg border-0" />
+                </div>
+                <div class="space-x-10 d-flex">
+                    <div id="boxUpload">
+                        <a href="#" class="btn btn-dark"> Обновить фото </a>
+                        <input id="imageUpload" type="file"
+                               name="profile_photo" placeholder="Photo"
+                               capture>
+                    </div>
+                </div>
+            </div>
+            <div class="box edit_box col-lg-9 space-y-30">
+                <div class="row sm:space-y-20">
+                    <div class="col-lg-6 account-info">
+                        <h3 class="mb-20">Account info 🍉</h3>
+                        <div class="form-group space-y-10 mb-0">
+                            <div class="space-y-20">
+                                <div class="space-y-10">
+                                    <span class="nameInput">Отображаемый Логин</span>
+                                    <p>
+                                        <strong style="background-color: red">
+                                            {{ form.username.errors }}
+                                        </strong>
+                                    </p>
+                                    {{ form.username }}
+                                </div>
+                                <div class="space-y-10">
+														<span class="nameInput d-flex justify-content-between">
+                                                            Email
+                                                            <span class="txt_xs color_text">
+                                                                Укажите свой действующий Email.</span>
+														</span>
+                                    <div class="confirm">
+                                        <p>
+                                            <strong style="background-color: red">
+                                                {{ form.email.errors }}
+                                            </strong>
+                                        </p>
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                                <div class="space-y-10">
+                                    <span class="nameInput">Имя</span>
+                                    <p>
+                                        <strong style="background-color: red">
+                                            {{ form.first_name.errors }}
+                                        </strong>
+                                    </p>
+                                    {{ form.first_name }}
+                                </div>
+                                <div class="space-y-10">
+                                    <span class="nameInput">Фамилия</span>
+                                    <p>
+                                        <strong style="background-color: red">
+                                            {{ form.last_name.errors }}
+                                        </strong>
+                                    </p>
+                                    {{ form.last_name }}
+                                </div>
+                                <div class="space-y-10">
+                                    <span class="nameInput">О себе</span>
+                                    <p>
+                                        <strong style="background-color: red">
+                                            {{ form.bio.errors }}
+                                        </strong>
+                                    </p>
+                                    {{ form.bio }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 social-media">
+                        <h3 class="mb-20 mt-40">📮 Уведомления </h3>
+
+                        <ul class="space-y-10">
+                            {% for n in  form.notifications %}
+                            <label>
+                            <input type="checkbox" name="notifications" value="{{ n.data.index|add:1 }}"
+                                   checked="" id="id_notifications_0">{{ n }}
+                            </label>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="hr"></div>
+            </div>
+            <button type="submit" class="btn btn-grad">Обновить профиль</button>
+        </div>
+    </form>
+    <div style="margin-top: 50px; margin-left: 50px">
+        <h5 class="color_black">Для смены пароля обратитесь в службу поддержки.</h5>
+    </div>
+    </body>
+{% endblock content %}
